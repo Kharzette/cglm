@@ -19,7 +19,7 @@ glmc_vec2(float * __restrict v, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_copy(vec2 a, vec2 dest);
+glmc_vec2_copy(const vec2 a, vec2 dest);
 
 CGLM_EXPORT
 void
@@ -31,11 +31,11 @@ glmc_vec2_one(vec2 v);
 
 CGLM_EXPORT
 float
-glmc_vec2_dot(vec2 a, vec2 b);
+glmc_vec2_dot(const vec2 a, const vec2 b);
 
 CGLM_EXPORT
 float
-glmc_vec2_cross(vec2 a, vec2 b);
+glmc_vec2_cross(const vec2 a, const vec2 b);
 
 CGLM_EXPORT
 float
@@ -47,67 +47,67 @@ glmc_vec2_norm(vec2 v);
 
 CGLM_EXPORT
 void
-glmc_vec2_add(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_add(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_adds(vec2 v, float s, vec2 dest);
+glmc_vec2_adds(const vec2 v, float s, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_sub(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_sub(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_subs(vec2 v, float s, vec2 dest);
+glmc_vec2_subs(const vec2 v, float s, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_mul(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_mul(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_scale(vec2 v, float s, vec2 dest);
+glmc_vec2_scale(const vec2 v, float s, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_scale_as(vec2 v, float s, vec2 dest);
+glmc_vec2_scale_as(const vec2 v, float s, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_div(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_div(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_divs(vec2 v, float s, vec2 dest);
+glmc_vec2_divs(const vec2 v, float s, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_addadd(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_addadd(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_subadd(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_subadd(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_muladd(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_muladd(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_muladds(vec2 a, float s, vec2 dest);
+glmc_vec2_muladds(const vec2 a, float s, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_maxadd(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_maxadd(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_minadd(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_minadd(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_negate_to(vec2 v, vec2 dest);
+glmc_vec2_negate_to(const vec2 v, vec2 dest);
 
 CGLM_EXPORT
 void
@@ -119,27 +119,27 @@ glmc_vec2_normalize(vec2 v);
 
 CGLM_EXPORT
 void
-glmc_vec2_normalize_to(vec2 v, vec2 dest);
+glmc_vec2_normalize_to(const vec2 v, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_rotate(vec2 v, float angle, vec2 dest);
+glmc_vec2_rotate(const vec2 v, float angle, vec2 dest);
 
 CGLM_EXPORT
 float
-glmc_vec2_distance2(vec2 a, vec2 b);
+glmc_vec2_distance2(const vec2 a, const vec2 b);
 
 CGLM_EXPORT
 float
-glmc_vec2_distance(vec2 a, vec2 b);
+glmc_vec2_distance(const vec2 a, const vec2 b);
 
 CGLM_EXPORT
 void
-glmc_vec2_maxv(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_maxv(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_minv(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_minv(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
@@ -147,23 +147,23 @@ glmc_vec2_clamp(vec2 v, float minval, float maxval);
 
 CGLM_EXPORT
 void
-glmc_vec2_abs(vec2 v, vec2 dest);
+glmc_vec2_abs(const vec2 v, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_lerp(vec2 from, vec2 to, float t, vec2 dest);
+glmc_vec2_lerp(const vec2 from, const vec2 to, float t, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_complex_mul(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_complex_mul(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_complex_div(vec2 a, vec2 b, vec2 dest);
+glmc_vec2_complex_div(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_complex_conjugate(vec2 a, vec2 dest);
+glmc_vec2_complex_conjugate(const vec2 a, vec2 dest);
 
 #ifdef __cplusplus
 }
