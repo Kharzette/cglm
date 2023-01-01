@@ -49,7 +49,7 @@
  */
 CGLM_INLINE
 void
-glm_translate_make(mat4 m, vec3 v) {
+glm_translate_make(mat4 m, const vec3 v) {
   glm_mat4_identity(m);
   glm_vec3_copy(v, m[3]);
 }
@@ -125,7 +125,7 @@ glm_scale_uni(mat4 m, float s) {
  */
 CGLM_INLINE
 void
-glm_rotate_make(mat4 m, float angle, vec3 axis) {
+glm_rotate_make(mat4 m, float angle, const vec3 axis) {
   CGLM_ALIGN(8) vec3 axisn, v, vs;
   float c;
 
@@ -155,7 +155,7 @@ glm_rotate_make(mat4 m, float angle, vec3 axis) {
  */
 CGLM_INLINE
 void
-glm_decompose_scalev(mat4 m, vec3 s) {
+glm_decompose_scalev(const mat4 m, vec3 s) {
   s[0] = glm_vec3_norm(m[0]);
   s[1] = glm_vec3_norm(m[1]);
   s[2] = glm_vec3_norm(m[2]);
@@ -171,7 +171,7 @@ glm_decompose_scalev(mat4 m, vec3 s) {
  */
 CGLM_INLINE
 bool
-glm_uniscaled(mat4 m) {
+glm_uniscaled(const mat4 m) {
   CGLM_ALIGN(8) vec3 s;
   glm_decompose_scalev(m, s);
   return glm_vec3_eq_all(s);
@@ -187,7 +187,7 @@ glm_uniscaled(mat4 m) {
  */
 CGLM_INLINE
 void
-glm_decompose_rs(mat4 m, mat4 r, vec3 s) {
+glm_decompose_rs(const mat4 m, mat4 r, vec3 s) {
   CGLM_ALIGN(16) vec4 t = {0.0f, 0.0f, 0.0f, 1.0f};
   CGLM_ALIGN(8)  vec3 v;
 
@@ -227,7 +227,7 @@ glm_decompose_rs(mat4 m, mat4 r, vec3 s) {
  */
 CGLM_INLINE
 void
-glm_decompose(mat4 m, vec4 t, mat4 r, vec3 s) {
+glm_decompose(const mat4 m, vec4 t, mat4 r, vec3 s) {
   glm_vec4_copy(m[3], t);
   glm_decompose_rs(m, r, s);
 }
