@@ -64,7 +64,7 @@ glm_translate_make(mat4 m, const vec3 v) {
  */
 CGLM_INLINE
 void
-glm_scale_to(mat4 m, vec3 v, mat4 dest) {
+glm_scale_to(const mat4 m, const vec3 v, mat4 dest) {
   glm_vec4_scale(m[0], v[0], dest[0]);
   glm_vec4_scale(m[1], v[1], dest[1]);
   glm_vec4_scale(m[2], v[2], dest[2]);
@@ -80,7 +80,7 @@ glm_scale_to(mat4 m, vec3 v, mat4 dest) {
  */
 CGLM_INLINE
 void
-glm_scale_make(mat4 m, vec3 v) {
+glm_scale_make(mat4 m, const vec3 v) {
   glm_mat4_identity(m);
   m[0][0] = v[0];
   m[1][1] = v[1];
@@ -96,7 +96,7 @@ glm_scale_make(mat4 m, vec3 v) {
  */
 CGLM_INLINE
 void
-glm_scale(mat4 m, vec3 v) {
+glm_scale(mat4 m, const vec3 v) {
   glm_scale_to(m, v, m);
 }
 

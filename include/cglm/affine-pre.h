@@ -250,7 +250,7 @@ glm_rotate(mat4 m, float angle, const vec3 axis) {
  */
 CGLM_INLINE
 void
-glm_rotate_at(mat4 m, vec3 pivot, float angle, vec3 axis) {
+glm_rotate_at(mat4 m, const vec3 pivot, float angle, const vec3 axis) {
   CGLM_ALIGN(8) vec3 pivotInv;
 
   glm_vec3_negate_to(pivot, pivotInv);
