@@ -133,7 +133,7 @@ glms_mat2_(mul)(const mat2s m1, const mat2s m2) {
  */
 CGLM_INLINE
 mat2s
-glms_mat2_(transpose)(const mat2s m) {
+glms_mat2_(transpose)(mat2s m) {
   glm_mat2_transpose(m.raw);
   return m;
 }
@@ -177,7 +177,7 @@ glms_mat2_(trace)(const mat2s m) {
  */
 CGLM_INLINE
 mat2s
-glms_mat2_(scale)(const mat2s m, float s) {
+glms_mat2_(scale)(mat2s m, float s) {
   glm_mat2_scale(m.raw, s);
   return m;
 }

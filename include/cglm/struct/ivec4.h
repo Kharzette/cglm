@@ -566,7 +566,7 @@ glms_ivec4_(minv)(const ivec4s a, const ivec4s b) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(clamp)(const ivec4s v, int minVal, int maxVal) {
+glms_ivec4_(clamp)(ivec4s v, int minVal, int maxVal) {
   glm_ivec4_clamp(v.raw, minVal, maxVal);
   return v;
 }

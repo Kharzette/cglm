@@ -703,7 +703,7 @@ glms_ivec3_(minv)(const ivec3s a, const ivec3s b) {
  */
 CGLM_INLINE
 ivec3s
-glms_ivec3_(clamp)(const ivec3s v, int minVal, int maxVal) {
+glms_ivec3_(clamp)(ivec3s v, int minVal, int maxVal) {
   glm_ivec3_clamp(v.raw, minVal, maxVal);
   return v;
 }

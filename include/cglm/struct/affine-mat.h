@@ -83,7 +83,7 @@ glms_mul_rot(const mat4s m1, const mat4s m2){
  */
 CGLM_INLINE
 mat4s
-glms_inv_tr(const mat4s m){
+glms_inv_tr(mat4s m){
   glm_inv_tr(m.raw);
   return m;
 }
