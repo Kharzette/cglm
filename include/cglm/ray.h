@@ -39,12 +39,13 @@
  */
 CGLM_INLINE
 bool
-glm_ray_triangle(vec3   origin,
-                 vec3   direction,
-                 vec3   v0,
-                 vec3   v1,
-                 vec3   v2,
-                 float *d) {
+glm_ray_triangle(const vec3   origin,
+                 const vec3   direction,
+                 const vec3   v0,
+                 const vec3   v1,
+                 const vec3   v2,
+                 float        *d)
+{
   vec3        edge1, edge2, p, t, q;
   float       det, inv_det, u, v, dist;
   const float epsilon = 0.000001f;
