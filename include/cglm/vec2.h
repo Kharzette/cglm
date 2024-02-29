@@ -420,7 +420,7 @@ glm_vec2_minadd(const vec2 a, const vec2 b, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_subsub(vec2 a, vec2 b, vec2 dest) {
+glm_vec2_subsub(const vec2 a, const vec2 b, vec2 dest) {
   dest[0] -= a[0] - b[0];
   dest[1] -= a[1] - b[1];
 }
@@ -436,7 +436,7 @@ glm_vec2_subsub(vec2 a, vec2 b, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_addsub(vec2 a, vec2 b, vec2 dest) {
+glm_vec2_addsub(const vec2 a, const vec2 b, vec2 dest) {
   dest[0] -= a[0] + b[0];
   dest[1] -= a[1] + b[1];
 }
@@ -452,7 +452,7 @@ glm_vec2_addsub(vec2 a, vec2 b, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_mulsub(vec2 a, vec2 b, vec2 dest) {
+glm_vec2_mulsub(const vec2 a, const vec2 b, vec2 dest) {
   dest[0] -= a[0] * b[0];
   dest[1] -= a[1] * b[1];
 }
@@ -468,7 +468,7 @@ glm_vec2_mulsub(vec2 a, vec2 b, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_mulsubs(vec2 a, float s, vec2 dest) {
+glm_vec2_mulsubs(const vec2 a, float s, vec2 dest) {
   dest[0] -= a[0] * s;
   dest[1] -= a[1] * s;
 }
@@ -484,7 +484,7 @@ glm_vec2_mulsubs(vec2 a, float s, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_maxsub(vec2 a, vec2 b, vec2 dest) {
+glm_vec2_maxsub(const vec2 a, const vec2 b, vec2 dest) {
   dest[0] -= glm_max(a[0], b[0]);
   dest[1] -= glm_max(a[1], b[1]);
 }
@@ -500,7 +500,7 @@ glm_vec2_maxsub(vec2 a, vec2 b, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_minsub(vec2 a, vec2 b, vec2 dest) {
+glm_vec2_minsub(const vec2 a, const vec2 b, vec2 dest) {
   dest[0] -= glm_min(a[0], b[0]);
   dest[1] -= glm_min(a[1], b[1]);
 }
@@ -605,7 +605,7 @@ glm_vec2_rotate(const vec2 v, float angle, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_center(vec2 a, vec2 b, vec2 dest) {
+glm_vec2_center(const vec2 a, const vec2 b, vec2 dest) {
   glm_vec2_add(a, b, dest);
   glm_vec2_scale(dest, 0.5f, dest);
 }
@@ -708,7 +708,7 @@ glm_vec2_lerp(const vec2 from, const vec2 to, float t, vec2 dest) {
  */
 CGLM_INLINE
 void
-glm_vec2_make(float * __restrict src, vec2 dest) {
+glm_vec2_make(const float * __restrict src, vec2 dest) {
   dest[0] = src[0]; dest[1] = src[1];
 }
 

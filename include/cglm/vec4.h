@@ -709,7 +709,7 @@ glm_vec4_minadd(const vec4 a, const vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_subsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_subsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(
           glmm_load(dest),
@@ -741,7 +741,7 @@ glm_vec4_subsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_addsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_addsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(
           glmm_load(dest),
@@ -773,7 +773,7 @@ glm_vec4_addsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_mulsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_mulsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(CGLM_SIMD)
   glmm_store(dest, glmm_fnmadd(glmm_load(a), glmm_load(b), glmm_load(dest)));
 #else
@@ -795,7 +795,7 @@ glm_vec4_mulsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_mulsubs(vec4 a, float s, vec4 dest) {
+glm_vec4_mulsubs(const vec4 a, float s, vec4 dest) {
 #if defined(CGLM_SIMD)
   glmm_store(dest, glmm_fnmadd(glmm_load(a), glmm_set1(s), glmm_load(dest)));
 #else
@@ -817,7 +817,7 @@ glm_vec4_mulsubs(vec4 a, float s, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_maxsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_maxsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(glmm_load(dest),
                                   glmm_max(glmm_load(a), glmm_load(b))));
@@ -846,7 +846,7 @@ glm_vec4_maxsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_minsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_minsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(glmm_load(dest),
                                   glmm_min(glmm_load(a), glmm_load(b))));
@@ -970,7 +970,7 @@ glm_vec4_normalize(vec4 v) {
  */
 CGLM_INLINE
 float
-glm_vec4_distance(const vec4 a, vec4 b) {
+glm_vec4_distance(const vec4 a, const vec4 b) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   return glmm_norm(wasm_f32x4_sub(glmm_load(a), glmm_load(b)));
 #elif defined( __SSE__ ) || defined( __SSE2__ )
@@ -1299,7 +1299,7 @@ glm_vec4_swizzle(const vec4 v, int mask, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_make(float * __restrict src, vec4 dest) {
+glm_vec4_make(const float * __restrict src, vec4 dest) {
   dest[0] = src[0]; dest[1] = src[1];
   dest[2] = src[2]; dest[3] = src[3];
 }

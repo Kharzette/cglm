@@ -50,7 +50,7 @@
  */
 CGLM_INLINE
 vec3s
-glms_unprojecti_no(vec3s pos, mat4s invMat, vec4s vp) {
+glms_unprojecti_no(const vec3s pos, const mat4s invMat, const vec4s vp) {
   vec3s dest;
   glm_unprojecti_no(pos.raw, invMat.raw, vp.raw, dest.raw);
   return dest;
@@ -71,7 +71,7 @@ glms_unprojecti_no(vec3s pos, mat4s invMat, vec4s vp) {
  */
 CGLM_INLINE
 vec3s
-glms_project_no(vec3s pos, mat4s m, vec4s vp) {
+glms_project_no(const vec3s pos, const mat4s m, const vec4s vp) {
   vec3s dest;
   glm_project_no(pos.raw, m.raw, vp.raw, dest.raw);
   return dest;
@@ -91,7 +91,7 @@ glms_project_no(vec3s pos, mat4s m, vec4s vp) {
  */
 CGLM_INLINE
 float
-glms_project_z_no(vec3s v, mat4s m) {
+glms_project_z_no(const vec3s v, const mat4s m) {
   return glm_project_z_no(v.raw, m.raw);
 }
 

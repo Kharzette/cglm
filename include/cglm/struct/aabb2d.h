@@ -27,7 +27,7 @@
  */
 CGLM_INLINE
 void
-glms_aabb2d_(transform)(vec2s aabb[2], mat3s m, vec2s dest[2]) {
+glms_aabb2d_(transform)(const vec2s aabb[2], const mat3s m, vec2s dest[2]) {
   vec2 rawAabb[2];
   vec2 rawDest[2];
 
@@ -48,7 +48,7 @@ glms_aabb2d_(transform)(vec2s aabb[2], mat3s m, vec2s dest[2]) {
  */
 CGLM_INLINE
 void
-glms_aabb2d_(merge)(vec2s aabb1[2], vec2s aabb2[2], vec2s dest[2]) {
+glms_aabb2d_(merge)(const vec2s aabb1[2], const vec2s aabb2[2], vec2s dest[2]) {
   vec2 rawAabb1[2];
   vec2 rawAabb2[2];
   vec2 rawDest[2];
@@ -72,7 +72,7 @@ glms_aabb2d_(merge)(vec2s aabb1[2], vec2s aabb2[2], vec2s dest[2]) {
  */
 CGLM_INLINE
 void
-glms_aabb2d_(crop)(vec2s aabb[2], vec2s cropAabb[2], vec2s dest[2]) {
+glms_aabb2d_(crop)(const vec2s aabb[2], const vec2s cropAabb[2], vec2s dest[2]) {
   vec2 rawAabb[2];
   vec2 rawCropAabb[2];
   vec2 rawDest[2];
@@ -97,9 +97,9 @@ glms_aabb2d_(crop)(vec2s aabb[2], vec2s cropAabb[2], vec2s dest[2]) {
  */
 CGLM_INLINE
 void
-glms_aabb2d_(crop_until)(vec2s aabb[2],
-                       vec2s cropAabb[2],
-                       vec2s clampAabb[2],
+glms_aabb2d_(crop_until)(const vec2s aabb[2],
+                       const vec2s cropAabb[2],
+                       const vec2s clampAabb[2],
                        vec2s dest[2]) {
   glms_aabb2d_(crop)(aabb, cropAabb, dest);
   glms_aabb2d_(merge)(clampAabb, dest, dest);
@@ -112,7 +112,7 @@ glms_aabb2d_(crop_until)(vec2s aabb[2],
  */
 CGLM_INLINE
 void
-glms_aabb2d_(invalidate)(vec2s box[2]) {
+glms_aabb2d_(invalidate)(const vec2s box[2]) {
   box[0] = glms_vec2_(fill)(FLT_MAX);
   box[1] = glms_vec2_(fill)(-FLT_MAX);
 }
@@ -124,7 +124,7 @@ glms_aabb2d_(invalidate)(vec2s box[2]) {
  */
 CGLM_INLINE
 bool
-glms_aabb2d_(isvalid)(vec2s aabb[2]) {
+glms_aabb2d_(isvalid)(const vec2s aabb[2]) {
   vec2 rawAabb[2];
   glms_vec2_(unpack)(rawAabb, aabb, 2);
   return glm_aabb2d_isvalid(rawAabb);
@@ -137,7 +137,7 @@ glms_aabb2d_(isvalid)(vec2s aabb[2]) {
  */
 CGLM_INLINE
 float
-glms_aabb2d_(size)(vec2s aabb[2]) {
+glms_aabb2d_(size)(const vec2s aabb[2]) {
   return glm_vec2_distance(aabb[0].raw, aabb[1].raw);
 }
 
@@ -148,7 +148,7 @@ glms_aabb2d_(size)(vec2s aabb[2]) {
  */
 CGLM_INLINE
 float
-glms_aabb2d_(radius)(vec2s aabb[2]) {
+glms_aabb2d_(radius)(const vec2s aabb[2]) {
   return glms_aabb2d_(size)(aabb) * 0.5f;
 }
 
@@ -160,7 +160,7 @@ glms_aabb2d_(radius)(vec2s aabb[2]) {
  */
 CGLM_INLINE
 vec2s
-glms_aabb2d_(center)(vec2s aabb[2]) {
+glms_aabb2d_(center)(const vec2s aabb[2]) {
   return glms_vec2_(center)(aabb[0], aabb[1]);
 }
 
@@ -172,7 +172,7 @@ glms_aabb2d_(center)(vec2s aabb[2]) {
  */
 CGLM_INLINE
 bool
-glms_aabb2d_(aabb)(vec2s aabb[2], vec2s other[2]) {
+glms_aabb2d_(aabb)(const vec2s aabb[2], const vec2s other[2]) {
   vec2 rawAabb[2];
   vec2 rawOther[2];
 
@@ -192,7 +192,7 @@ glms_aabb2d_(aabb)(vec2s aabb[2], vec2s other[2]) {
  */
 CGLM_INLINE
 bool
-glms_aabb2d_(circle)(vec2s aabb[2], vec3s c) {
+glms_aabb2d_(circle)(const vec2s aabb[2], const vec3s c) {
   vec2 rawAabb[2];
 
   glms_vec2_(unpack)(rawAabb, aabb, 2);
@@ -207,7 +207,7 @@ glms_aabb2d_(circle)(vec2s aabb[2], vec3s c) {
  */
 CGLM_INLINE
 bool
-glms_aabb2d_(point)(vec2s aabb[2], vec2s point) {
+glms_aabb2d_(point)(const vec2s aabb[2], const vec2s point) {
   vec2 rawAabb[2];
 
   glms_vec2_(unpack)(rawAabb, aabb, 2);
@@ -222,7 +222,7 @@ glms_aabb2d_(point)(vec2s aabb[2], vec2s point) {
  */
 CGLM_INLINE
 bool
-glms_aabb2d_(contains)(vec2s aabb[2], vec2s other[2]) {
+glms_aabb2d_(contains)(const vec2s aabb[2], const vec2s other[2]) {
   vec2 rawAabb[2];
   vec2 rawOther[2];
 

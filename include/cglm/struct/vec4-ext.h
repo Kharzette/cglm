@@ -77,7 +77,7 @@ glms_vec4_(fill)(float val) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(eq)(vec4s v, float val) {
+glms_vec4_(eq)(const vec4s v, float val) {
   return glm_vec4_eq(v.raw, val);
 }
 
@@ -89,7 +89,7 @@ glms_vec4_(eq)(vec4s v, float val) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(eq_eps)(vec4s v, float val) {
+glms_vec4_(eq_eps)(const vec4s v, float val) {
   return glm_vec4_eq_eps(v.raw, val);
 }
 
@@ -100,7 +100,7 @@ glms_vec4_(eq_eps)(vec4s v, float val) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(eq_all)(vec4s v) {
+glms_vec4_(eq_all)(const vec4s v) {
   return glm_vec4_eq_all(v.raw);
 }
 
@@ -112,7 +112,7 @@ glms_vec4_(eq_all)(vec4s v) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(eqv)(vec4s a, vec4s b) {
+glms_vec4_(eqv)(const vec4s a, const vec4s b) {
   return glm_vec4_eqv(a.raw, b.raw);
 }
 
@@ -124,7 +124,7 @@ glms_vec4_(eqv)(vec4s a, vec4s b) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(eqv_eps)(vec4s a, vec4s b) {
+glms_vec4_(eqv_eps)(const vec4s a, const vec4s b) {
   return glm_vec4_eqv_eps(a.raw, b.raw);
 }
 
@@ -135,7 +135,7 @@ glms_vec4_(eqv_eps)(vec4s a, vec4s b) {
  */
 CGLM_INLINE
 float
-glms_vec4_(max)(vec4s v) {
+glms_vec4_(max)(const vec4s v) {
   return glm_vec4_max(v.raw);
 }
 
@@ -146,7 +146,7 @@ glms_vec4_(max)(vec4s v) {
  */
 CGLM_INLINE
 float
-glms_vec4_(min)(vec4s v) {
+glms_vec4_(min)(const vec4s v) {
   return glm_vec4_min(v.raw);
 }
 
@@ -158,7 +158,7 @@ glms_vec4_(min)(vec4s v) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(isnan)(vec4s v) {
+glms_vec4_(isnan)(const vec4s v) {
   return glm_vec4_isnan(v.raw);
 }
 
@@ -170,7 +170,7 @@ glms_vec4_(isnan)(vec4s v) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(isinf)(vec4s v) {
+glms_vec4_(isinf)(const vec4s v) {
   return glm_vec4_isinf(v.raw);
 }
 
@@ -182,7 +182,7 @@ glms_vec4_(isinf)(vec4s v) {
  */
 CGLM_INLINE
 bool
-glms_vec4_(isvalid)(vec4s v) {
+glms_vec4_(isvalid)(const vec4s v) {
   return glm_vec4_isvalid(v.raw);
 }
 
@@ -196,7 +196,7 @@ glms_vec4_(isvalid)(vec4s v) {
  */
 CGLM_INLINE
 vec4s
-glms_vec4_(sign)(vec4s v) {
+glms_vec4_(sign)(const vec4s v) {
   vec4s r;
   glm_vec4_sign(v.raw, r.raw);
   return r;
@@ -210,7 +210,7 @@ glms_vec4_(sign)(vec4s v) {
  */
 CGLM_INLINE
 vec4s
-glms_vec4_(abs)(vec4s v) {
+glms_vec4_(abs)(const vec4s v) {
   vec4s r;
   glm_vec4_abs(v.raw, r.raw);
   return r;
@@ -224,7 +224,7 @@ glms_vec4_(abs)(vec4s v) {
  */
 CGLM_INLINE
 vec4s
-glms_vec4_(fract)(vec4s v) {
+glms_vec4_(fract)(const vec4s v) {
   vec4s r;
   glm_vec4_fract(v.raw, r.raw);
   return r;
@@ -239,7 +239,7 @@ glms_vec4_(fract)(vec4s v) {
  */
 CGLM_INLINE
 float
-glms_vec4_(hadd)(vec4s v) {
+glms_vec4_(hadd)(const vec4s v) {
   return glm_vec4_hadd(v.raw);
 }
 
@@ -251,7 +251,7 @@ glms_vec4_(hadd)(vec4s v) {
  */
 CGLM_INLINE
 vec4s
-glms_vec4_(sqrt)(vec4s v) {
+glms_vec4_(sqrt)(const vec4s v) {
   vec4s r;
   glm_vec4_sqrt(v.raw, r.raw);
   return r;

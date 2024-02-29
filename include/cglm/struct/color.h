@@ -20,7 +20,7 @@
  */
 CGLM_INLINE
 float
-glms_luminance(vec3s rgb) {
+glms_luminance(const vec3s rgb) {
   return glm_luminance(rgb.raw);
 }
 

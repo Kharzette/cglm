@@ -49,7 +49,7 @@
  */
 CGLM_INLINE
 mat4s
-glms_translate_make(vec3s v) {
+glms_translate_make(const vec3s v) {
   mat4s m;
   glm_translate_make(m.raw, v.raw);
   return m;
@@ -63,7 +63,7 @@ glms_translate_make(vec3s v) {
  */
 CGLM_INLINE
 mat4s
-glms_scale_make(vec3s v) {
+glms_scale_make(const vec3s v) {
   mat4s m;
   glm_scale_make(m.raw, v.raw);
   return m;
@@ -79,7 +79,7 @@ glms_scale_make(vec3s v) {
  */
 CGLM_INLINE
 mat4s
-glms_scale(mat4s m, vec3s v) {
+glms_scale(mat4s m, const vec3s v) {
   mat4s r;
   glm_scale_to(m.raw, v.raw, r.raw);
   return r;
@@ -111,7 +111,7 @@ glms_scale_uni(mat4s m, float s) {
  */
 CGLM_INLINE
 mat4s
-glms_rotate_make(float angle, vec3s axis) {
+glms_rotate_make(float angle, const vec3s axis) {
   mat4s m;
   glm_rotate_make(m.raw, angle, axis.raw);
   return m;
@@ -132,7 +132,7 @@ glms_rotate_make(float angle, vec3s axis) {
  */
 CGLM_INLINE
 mat4s
-glms_rotate_atm(vec3s pivot, float angle, vec3s axis) {
+glms_rotate_atm(const vec3s pivot, float angle, const vec3s axis) {
   mat4s m;
   glm_rotate_atm(m.raw, pivot.raw, angle, axis.raw);
   return m;
@@ -146,7 +146,7 @@ glms_rotate_atm(vec3s pivot, float angle, vec3s axis) {
  */
 CGLM_INLINE
 vec3s
-glms_decompose_scalev(mat4s m) {
+glms_decompose_scalev(const mat4s m) {
   vec3s r;
   glm_decompose_scalev(m.raw, r.raw);
   return r;
@@ -162,7 +162,7 @@ glms_decompose_scalev(mat4s m) {
  */
 CGLM_INLINE
 bool
-glms_uniscaled(mat4s m) {
+glms_uniscaled(const mat4s m) {
   return glm_uniscaled(m.raw);
 }
 
@@ -176,7 +176,7 @@ glms_uniscaled(mat4s m) {
  */
 CGLM_INLINE
 void
-glms_decompose_rs(mat4s m, mat4s * __restrict r, vec3s * __restrict s) {
+glms_decompose_rs(const mat4s m, mat4s * __restrict r, vec3s * __restrict s) {
   glm_decompose_rs(m.raw, r->raw, s->raw);
 }
 
@@ -191,7 +191,7 @@ glms_decompose_rs(mat4s m, mat4s * __restrict r, vec3s * __restrict s) {
  */
 CGLM_INLINE
 void
-glms_decompose(mat4s m, vec4s * __restrict t, mat4s * __restrict r, vec3s * __restrict s) {
+glms_decompose(const mat4s m, vec4s * __restrict t, mat4s * __restrict r, vec3s * __restrict s) {
   glm_decompose(m.raw, t->raw, r->raw, s->raw);
 }
 

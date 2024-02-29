@@ -188,7 +188,7 @@ glm_perspective_resize_lh_zo(float aspect, mat4 proj) {
  */
 CGLM_INLINE
 void
-glm_persp_decomp_lh_zo(mat4 proj,
+glm_persp_decomp_lh_zo(const mat4 proj,
                     float * __restrict nearZ, float * __restrict farZ,
                     float * __restrict top,     float * __restrict bottom,
                     float * __restrict left,    float * __restrict right) {
@@ -227,7 +227,7 @@ glm_persp_decomp_lh_zo(mat4 proj,
  */
 CGLM_INLINE
 void
-glm_persp_decompv_lh_zo(mat4 proj, float dest[6]) {
+glm_persp_decompv_lh_zo(const mat4 proj, float dest[6]) {
   glm_persp_decomp_lh_zo(proj, &dest[0], &dest[1], &dest[2],
                                &dest[3], &dest[4], &dest[5]);
 }
@@ -242,7 +242,7 @@ glm_persp_decompv_lh_zo(mat4 proj, float dest[6]) {
  */
 CGLM_INLINE
 void
-glm_persp_decomp_x_lh_zo(mat4 proj,
+glm_persp_decomp_x_lh_zo(const mat4 proj,
                          float * __restrict left,
                          float * __restrict right) {
   float nearZ, m20, m00;
@@ -267,7 +267,7 @@ glm_persp_decomp_x_lh_zo(mat4 proj,
  */
 CGLM_INLINE
 void
-glm_persp_decomp_y_lh_zo(mat4 proj,
+glm_persp_decomp_y_lh_zo(const mat4 proj,
                          float * __restrict top,
                          float * __restrict bottom) {
   float nearZ, m21, m11;
@@ -292,7 +292,7 @@ glm_persp_decomp_y_lh_zo(mat4 proj,
  */
 CGLM_INLINE
 void
-glm_persp_decomp_z_lh_zo(mat4 proj,
+glm_persp_decomp_z_lh_zo(const mat4 proj,
                          float * __restrict nearZ,
                          float * __restrict farZ) {
   float m32, m22;
@@ -314,7 +314,7 @@ glm_persp_decomp_z_lh_zo(mat4 proj,
  */
 CGLM_INLINE
 void
-glm_persp_decomp_far_lh_zo(mat4 proj, float * __restrict farZ) {
+glm_persp_decomp_far_lh_zo(const mat4 proj, float * __restrict farZ) {
   *farZ = proj[3][2] / (-proj[2][2] + 1.0f);
 }
 
@@ -328,7 +328,7 @@ glm_persp_decomp_far_lh_zo(mat4 proj, float * __restrict farZ) {
  */
 CGLM_INLINE
 void
-glm_persp_decomp_near_lh_zo(mat4 proj, float * __restrict nearZ) {
+glm_persp_decomp_near_lh_zo(const mat4 proj, float * __restrict nearZ) {
   *nearZ = proj[3][2] / -proj[2][2];
 }
 
@@ -343,7 +343,7 @@ glm_persp_decomp_near_lh_zo(mat4 proj, float * __restrict nearZ) {
  */
 CGLM_INLINE
 void
-glm_persp_sizes_lh_zo(mat4 proj, float fovy, vec4 dest) {
+glm_persp_sizes_lh_zo(const mat4 proj, float fovy, vec4 dest) {
   float t, a, nearZ, farZ;
 
   t = 2.0f * tanf(fovy * 0.5f);
@@ -368,7 +368,7 @@ glm_persp_sizes_lh_zo(mat4 proj, float fovy, vec4 dest) {
  */
 CGLM_INLINE
 float
-glm_persp_fovy_lh_zo(mat4 proj) {
+glm_persp_fovy_lh_zo(const mat4 proj) {
   return glm_persp_fovy(proj);
 }
 
@@ -380,7 +380,7 @@ glm_persp_fovy_lh_zo(mat4 proj) {
  */
 CGLM_INLINE
 float
-glm_persp_aspect_lh_zo(mat4 proj) {
+glm_persp_aspect_lh_zo(const mat4 proj) {
   return glm_persp_aspect(proj);
 }
 

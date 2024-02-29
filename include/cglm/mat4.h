@@ -607,7 +607,7 @@ glm_mat4_scale(mat4 m, float s) {
  */
 CGLM_INLINE
 float
-glm_mat4_det(mat4 mat) {
+glm_mat4_det(const mat4 mat) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   return glm_mat4_det_wasm(mat);
 #elif defined( __SSE__ ) || defined( __SSE2__ )
@@ -790,7 +790,7 @@ glm_mat4_rmc(const vec4 r, const mat4 m, const vec4 c) {
  */
 CGLM_INLINE
 void
-glm_mat4_make(float * __restrict src, mat4 dest) {
+glm_mat4_make(const float * __restrict src, mat4 dest) {
   dest[0][0] = src[0];   dest[1][0] = src[4];
   dest[0][1] = src[1];   dest[1][1] = src[5];
   dest[0][2] = src[2];   dest[1][2] = src[6];

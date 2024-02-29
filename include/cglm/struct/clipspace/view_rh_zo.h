@@ -36,7 +36,7 @@
  */
 CGLM_INLINE
 mat4s
-glms_lookat_rh_zo(vec3s eye, vec3s center, vec3s up) {
+glms_lookat_rh_zo(const vec3s eye, const vec3s center, const vec3s up) {
   mat4s dest;
   glm_lookat_rh_zo(eye.raw, center.raw, up.raw, dest.raw);
   return dest;
@@ -60,7 +60,7 @@ glms_lookat_rh_zo(vec3s eye, vec3s center, vec3s up) {
  */
 CGLM_INLINE
 mat4s
-glms_look_rh_zo(vec3s eye, vec3s dir, vec3s up) {
+glms_look_rh_zo(const vec3s eye, const vec3s dir, const vec3s up) {
   mat4s dest;
   glm_look_rh_zo(eye.raw, dir.raw, up.raw, dest.raw);
   return dest;
@@ -80,7 +80,7 @@ glms_look_rh_zo(vec3s eye, vec3s dir, vec3s up) {
  */
 CGLM_INLINE
 mat4s
-glms_look_anyup_rh_zo(vec3s eye, vec3s dir) {
+glms_look_anyup_rh_zo(const vec3s eye, const vec3s dir) {
   mat4s dest;
   glm_look_anyup_rh_zo(eye.raw, dir.raw, dest.raw);
   return dest;

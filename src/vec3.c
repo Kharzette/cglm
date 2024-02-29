@@ -52,7 +52,7 @@ glmc_vec3_crossn(const vec3 a, const vec3 b, vec3 dest) {
 
 CGLM_EXPORT
 float
-glmc_vec3_norm(vec3 v) {
+glmc_vec3_norm(const vec3 v) {
   return glm_vec3_norm(v);
 }
 
@@ -70,19 +70,19 @@ glmc_vec3_normalize(vec3 v) {
 
 CGLM_EXPORT
 float
-glmc_vec3_norm2(vec3 v) {
+glmc_vec3_norm2(const vec3 v) {
   return glm_vec3_norm2(v);
 }
 
 CGLM_EXPORT
 float
-glmc_vec3_norm_one(vec3 v) {
+glmc_vec3_norm_one(const vec3 v) {
   return glm_vec3_norm_one(v);
 }
 
 CGLM_EXPORT
 float
-glmc_vec3_norm_inf(vec3 v) {
+glmc_vec3_norm_inf(const vec3 v) {
   return glm_vec3_norm_inf(v);
 }
 
@@ -178,37 +178,37 @@ glmc_vec3_minadd(const vec3 a, const vec3 b, vec3 dest) {
 
 CGLM_EXPORT
 void
-glmc_vec3_subsub(vec3 a, vec3 b, vec3 dest) {
+glmc_vec3_subsub(const vec3 a, const vec3 b, vec3 dest) {
   glm_vec3_subsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec3_addsub(vec3 a, vec3 b, vec3 dest) {
+glmc_vec3_addsub(const vec3 a, const vec3 b, vec3 dest) {
   glm_vec3_addsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec3_mulsub(vec3 a, vec3 b, vec3 dest) {
+glmc_vec3_mulsub(const vec3 a, const vec3 b, vec3 dest) {
   glm_vec3_mulsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec3_mulsubs(vec3 a, float s, vec3 dest) {
+glmc_vec3_mulsubs(const vec3 a, float s, vec3 dest) {
   glm_vec3_mulsubs(a, s, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec3_maxsub(vec3 a, vec3 b, vec3 dest) {
+glmc_vec3_maxsub(const vec3 a, const vec3 b, vec3 dest) {
   glm_vec3_maxsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec3_minsub(vec3 a, vec3 b, vec3 dest) {
+glmc_vec3_minsub(const vec3 a, const vec3 b, vec3 dest) {
   glm_vec3_minsub(a, b, dest);
 }
 
@@ -232,7 +232,7 @@ glmc_vec3_angle(const vec3 a, const vec3 b) {
 
 CGLM_EXPORT
 void
-glmc_vec3_rotate(vec3 v, float angle, vec3 axis) {
+glmc_vec3_rotate(vec3 v, float angle, const vec3 axis) {
   glm_vec3_rotate(v, angle, axis);
 }
 
@@ -456,6 +456,6 @@ glmc_vec3_sqrt(const vec3 v, vec3 dest) {
 
 CGLM_EXPORT
 void
-glmc_vec3_make(float * __restrict src, vec3 dest) {
+glmc_vec3_make(const float * __restrict src, vec3 dest) {
   glm_vec3_make(src, dest);
 }

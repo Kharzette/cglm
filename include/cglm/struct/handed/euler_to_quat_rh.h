@@ -30,7 +30,7 @@
  */
 CGLM_INLINE
 versors
-glms_euler_xyz_quat_rh(vec3s angles) {
+glms_euler_xyz_quat_rh(const vec3s angles) {
   versors dest;
   glm_euler_xyz_quat_rh(angles.raw, dest.raw);
   return dest;
@@ -45,7 +45,7 @@ glms_euler_xyz_quat_rh(vec3s angles) {
  */
 CGLM_INLINE
 versors
-glms_euler_xzy_quat_rh(vec3s angles) {
+glms_euler_xzy_quat_rh(const vec3s angles) {
   versors dest;
   glm_euler_xzy_quat_rh(angles.raw, dest.raw);
   return dest;
@@ -60,7 +60,7 @@ glms_euler_xzy_quat_rh(vec3s angles) {
  */
 CGLM_INLINE
 versors
-glms_euler_yxz_quat_rh(vec3s angles) {
+glms_euler_yxz_quat_rh(const vec3s angles) {
   versors dest;
   glm_euler_yxz_quat_rh(angles.raw, dest.raw);
   return dest;
@@ -75,7 +75,7 @@ glms_euler_yxz_quat_rh(vec3s angles) {
  */
 CGLM_INLINE
 versors
-glms_euler_yzx_quat_rh(vec3s angles) {
+glms_euler_yzx_quat_rh(const vec3s angles) {
   versors dest;
   glm_euler_yzx_quat_rh(angles.raw, dest.raw);
   return dest;
@@ -90,7 +90,7 @@ glms_euler_yzx_quat_rh(vec3s angles) {
  */
 CGLM_INLINE
 versors
-glms_euler_zxy_quat_rh(vec3s angles) {
+glms_euler_zxy_quat_rh(const vec3s angles) {
   versors dest;
   glm_euler_zxy_quat_rh(angles.raw, dest.raw);
   return dest;
@@ -105,7 +105,7 @@ glms_euler_zxy_quat_rh(vec3s angles) {
  */
 CGLM_INLINE
 versors
-glms_euler_zyx_quat_rh(vec3s angles) {
+glms_euler_zyx_quat_rh(const vec3s angles) {
   versors dest;
   glm_euler_zyx_quat_rh(angles.raw, dest.raw);
   return dest;

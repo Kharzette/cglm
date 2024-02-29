@@ -33,7 +33,7 @@
  */
 CGLM_INLINE
 float
-glms_smc(float s, mat4s m, vec4s c) {
+glms_smc(float s, const mat4s m, const vec4s c) {
   return glm_smc(s, m.raw, c.raw);
 }
 

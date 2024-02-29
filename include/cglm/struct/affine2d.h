@@ -38,7 +38,7 @@
  */
 CGLM_INLINE
 mat3s
-glms_translate2d(mat3s m, vec2s v) {
+glms_translate2d(const mat3s m, const vec2s v) {
   glm_translate2d(m.raw, v.raw);
   return m;
 }
@@ -52,7 +52,7 @@ glms_translate2d(mat3s m, vec2s v) {
  */
 CGLM_INLINE
 mat3s
-glms_translate2d_x(mat3s m, float x) {
+glms_translate2d_x(const mat3s m, float x) {
   glm_translate2d_x(m.raw, x);
   return m;
 }
@@ -66,7 +66,7 @@ glms_translate2d_x(mat3s m, float x) {
  */
 CGLM_INLINE
 mat3s
-glms_translate2d_y(mat3s m, float y) {
+glms_translate2d_y(const mat3s m, float y) {
   glm_translate2d_y(m.raw, y);
   return m;
 }
@@ -79,7 +79,7 @@ glms_translate2d_y(mat3s m, float y) {
  */
 CGLM_INLINE
 mat3s
-glms_translate2d_make(vec2s v) {
+glms_translate2d_make(const vec2s v) {
   mat3s m;
   glm_translate2d_make(m.raw, v.raw);
   return m;
@@ -93,7 +93,7 @@ glms_translate2d_make(vec2s v) {
  */
 CGLM_INLINE
 mat3s
-glms_scale2d_make(vec2s v) {
+glms_scale2d_make(const vec2s v) {
   mat3s m;
   glm_scale2d_make(m.raw, v.raw);
   return m;
@@ -109,7 +109,7 @@ glms_scale2d_make(vec2s v) {
  */
 CGLM_INLINE
 mat3s
-glms_scale2d(mat3s m, vec2s v) {
+glms_scale2d(mat3s m, const vec2s v) {
   mat3s r;
   glm_scale2d_to(m.raw, v.raw, r.raw);
   return r;

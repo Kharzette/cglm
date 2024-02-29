@@ -131,7 +131,7 @@ glmc_vec2_minsub(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_negate_to(const vec2 v, const vec2 dest);
+glmc_vec2_negate_to(const vec2 v, vec2 dest);
 
 CGLM_EXPORT
 void
@@ -195,7 +195,7 @@ glmc_vec2_complex_conjugate(const vec2 a, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_make(float * __restrict src, vec2 dest);
+glmc_vec2_make(const float * __restrict src, vec2 dest);
 
 #ifdef __cplusplus
 }

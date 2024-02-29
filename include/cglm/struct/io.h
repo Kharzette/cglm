@@ -31,7 +31,7 @@
 
 CGLM_INLINE
 void
-glms_mat4_print(mat4s             matrix,
+glms_mat4_print(const mat4s       matrix,
                 FILE * __restrict ostream) {
 
   glm_mat4_print(matrix.raw, ostream);
@@ -39,63 +39,63 @@ glms_mat4_print(mat4s             matrix,
 
 CGLM_INLINE
 void
-glms_mat3_print(mat3s             matrix,
+glms_mat3_print(const mat3s       matrix,
                 FILE * __restrict ostream) {
   glm_mat3_print(matrix.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_vec4_print(vec4s             vec,
+glms_vec4_print(const vec4s       vec,
                 FILE * __restrict ostream) {
   glm_vec4_print(vec.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_ivec4_print(ivec4s            vec,
+glms_ivec4_print(const ivec4s      vec,
                  FILE * __restrict ostream) {
   glm_ivec4_print(vec.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_vec3_print(vec3s             vec,
+glms_vec3_print(const vec3s       vec,
                 FILE * __restrict ostream) {
   glm_vec3_print(vec.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_ivec3_print(ivec3s            vec,
+glms_ivec3_print(const ivec3s      vec,
                  FILE * __restrict ostream) {
   glm_ivec3_print(vec.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_vec2_print(vec2s             vec,
+glms_vec2_print(const vec2s       vec,
                 FILE * __restrict ostream) {
   glm_vec2_print(vec.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_ivec2_print(ivec2s            vec,
+glms_ivec2_print(const ivec2s      vec,
                  FILE * __restrict ostream) {
   glm_ivec2_print(vec.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_versor_print(versors           vec,
+glms_versor_print(const versors     vec,
                   FILE * __restrict ostream) {
   glm_versor_print(vec.raw, ostream);
 }
 
 CGLM_INLINE
 void
-glms_aabb_print(vec3s                   bbox[2],
+glms_aabb_print(const vec3s             bbox[2],
                 const char * __restrict tag,
                 FILE       * __restrict ostream) {
   vec3 rawBbox[2];

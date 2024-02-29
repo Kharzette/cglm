@@ -52,7 +52,7 @@ glmc_vec4_dot(const vec4 a, const vec4 b) {
 
 CGLM_EXPORT
 float
-glmc_vec4_norm(vec4 v) {
+glmc_vec4_norm(const vec4 v) {
   return glm_vec4_norm(v);
 }
 
@@ -70,19 +70,19 @@ glmc_vec4_normalize(vec4 v) {
 
 CGLM_EXPORT
 float
-glmc_vec4_norm2(vec4 v) {
+glmc_vec4_norm2(const vec4 v) {
   return glm_vec4_norm2(v);
 }
 
 CGLM_EXPORT
 float
-glmc_vec4_norm_one(vec4 v) {
+glmc_vec4_norm_one(const vec4 v) {
   return glm_vec4_norm_one(v);
 }
 
 CGLM_EXPORT
 float
-glmc_vec4_norm_inf(vec4 v) {
+glmc_vec4_norm_inf(const vec4 v) {
   return glm_vec4_norm_inf(v);
 }
 
@@ -178,37 +178,37 @@ glmc_vec4_minadd(const vec4 a, const vec4 b, vec4 dest) {
 
 CGLM_EXPORT
 void
-glmc_vec4_subsub(vec4 a, vec4 b, vec4 dest) {
+glmc_vec4_subsub(const vec4 a, const vec4 b, vec4 dest) {
   glm_vec4_subsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec4_addsub(vec4 a, vec4 b, vec4 dest) {
+glmc_vec4_addsub(const vec4 a, const vec4 b, vec4 dest) {
   glm_vec4_addsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec4_mulsub(vec4 a, vec4 b, vec4 dest) {
+glmc_vec4_mulsub(const vec4 a, const vec4 b, vec4 dest) {
   glm_vec4_mulsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec4_mulsubs(vec4 a, float s, vec4 dest) {
+glmc_vec4_mulsubs(const vec4 a, float s, vec4 dest) {
   glm_vec4_mulsubs(a, s, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec4_maxsub(vec4 a, vec4 b, vec4 dest) {
+glmc_vec4_maxsub(const vec4 a, const vec4 b, vec4 dest) {
   glm_vec4_maxsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec4_minsub(vec4 a, vec4 b, vec4 dest) {
+glmc_vec4_minsub(const vec4 a, const vec4 b, vec4 dest) {
   glm_vec4_minsub(a, b, dest);
 }
 
@@ -420,6 +420,6 @@ glmc_vec4_sqrt(const vec4 v, vec4 dest) {
 
 CGLM_EXPORT
 void
-glmc_vec4_make(float * __restrict src, vec4 dest) {
+glmc_vec4_make(const float * __restrict src, vec4 dest) {
   glm_vec4_make(src, dest);
 }

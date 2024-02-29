@@ -95,7 +95,7 @@ glmc_mat4_scale(mat4 m, float s);
 
 CGLM_EXPORT
 float
-glmc_mat4_det(mat4 mat);
+glmc_mat4_det(const mat4 mat);
 
 CGLM_EXPORT
 void
@@ -123,7 +123,7 @@ glmc_mat4_rmc(const vec4 r, const mat4 m, const vec4 c);
 
 CGLM_EXPORT
 void
-glmc_mat4_make(float * __restrict src, mat4 dest);
+glmc_mat4_make(const float * __restrict src, mat4 dest);
 
 #ifdef __cplusplus
 }

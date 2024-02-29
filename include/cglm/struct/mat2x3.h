@@ -55,7 +55,7 @@ glms_mat2x3_(zero)(void) {
  */
 CGLM_INLINE
 mat2x3s
-glms_mat2x3_(make)(float * __restrict src) {
+glms_mat2x3_(make)(const float * __restrict src) {
   mat2x3s r;
   glm_mat2x3_make(src, r.raw);
   return r;
@@ -74,7 +74,7 @@ glms_mat2x3_(make)(float * __restrict src) {
  */
 CGLM_INLINE
 mat2s
-glms_mat2x3_(mul)(mat2x3s m1, mat3x2s m2) {
+glms_mat2x3_(mul)(const mat2x3s m1, const mat3x2s m2) {
   mat2s r;
   glm_mat2x3_mul(m1.raw, m2.raw, r.raw);
   return r;
@@ -89,7 +89,7 @@ glms_mat2x3_(mul)(mat2x3s m1, mat3x2s m2) {
  */
 CGLM_INLINE
 vec2s
-glms_mat2x3_(mulv)(mat2x3s m, vec3s v) {
+glms_mat2x3_(mulv)(const mat2x3s m, const vec3s v) {
   vec2s r;
   glm_mat2x3_mulv(m.raw, v.raw, r.raw);
   return r;
@@ -103,7 +103,7 @@ glms_mat2x3_(mulv)(mat2x3s m, vec3s v) {
  */
 CGLM_INLINE
 mat3x2s
-glms_mat2x3_(transpose)(mat2x3s m) {
+glms_mat2x3_(transpose)(const mat2x3s m) {
   mat3x2s r;
   glm_mat2x3_transpose(m.raw, r.raw);
   return r;

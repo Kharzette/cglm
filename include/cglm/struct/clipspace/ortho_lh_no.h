@@ -62,7 +62,7 @@ glms_ortho_lh_no(float left,   float right,
  */
 CGLM_INLINE
 mat4s
-glms_ortho_aabb_lh_no(vec3s box[2]) {
+glms_ortho_aabb_lh_no(const vec3s box[2]) {
   mat4s dest;
   vec3  rawBox[2];
 
@@ -85,7 +85,7 @@ glms_ortho_aabb_lh_no(vec3s box[2]) {
  */
 CGLM_INLINE
 mat4s
-glms_ortho_aabb_p_lh_no(vec3s box[2], float padding) {
+glms_ortho_aabb_p_lh_no(const vec3s box[2], float padding) {
   mat4s dest;
   vec3  rawBox[2];
 
@@ -108,7 +108,7 @@ glms_ortho_aabb_p_lh_no(vec3s box[2], float padding) {
  */
 CGLM_INLINE
 mat4s
-glms_ortho_aabb_pz_lh_no(vec3s box[2], float padding) {
+glms_ortho_aabb_pz_lh_no(const vec3s box[2], float padding) {
   mat4s dest;
   vec3  rawBox[2];
 

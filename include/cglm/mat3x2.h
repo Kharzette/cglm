@@ -38,7 +38,7 @@
  */
 CGLM_INLINE
 void
-glm_mat3x2_copy(mat3x2 mat, mat3x2 dest) {
+glm_mat3x2_copy(const mat3x2 mat, mat3x2 dest) {
   dest[0][0] = mat[0][0];
   dest[0][1] = mat[0][1];
 
@@ -69,7 +69,7 @@ glm_mat3x2_zero(mat3x2 mat) {
  */
 CGLM_INLINE
 void
-glm_mat3x2_make(float * __restrict src, mat3x2 dest) {
+glm_mat3x2_make(const float * __restrict src, mat3x2 dest) {
   dest[0][0] = src[0];
   dest[0][1] = src[1];
 
@@ -93,7 +93,7 @@ glm_mat3x2_make(float * __restrict src, mat3x2 dest) {
  */
 CGLM_INLINE
 void
-glm_mat3x2_mul(mat3x2 m1, mat2x3 m2, mat3 dest) {
+glm_mat3x2_mul(const mat3x2 m1, const mat2x3 m2, mat3 dest) {
   float a00 = m1[0][0], a01 = m1[0][1],
         a10 = m1[1][0], a11 = m1[1][1],
         a20 = m1[2][0], a21 = m1[2][1],
@@ -123,7 +123,7 @@ glm_mat3x2_mul(mat3x2 m1, mat2x3 m2, mat3 dest) {
  */
 CGLM_INLINE
 void
-glm_mat3x2_mulv(mat3x2 m, vec2 v, vec3 dest) {
+glm_mat3x2_mulv(const mat3x2 m, const vec2 v, vec3 dest) {
   float v0 = v[0], v1 = v[1];
 
   dest[0] = m[0][0] * v0 + m[0][1] * v1;
@@ -139,7 +139,7 @@ glm_mat3x2_mulv(mat3x2 m, vec2 v, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_mat3x2_transpose(mat3x2 m, mat2x3 dest) {
+glm_mat3x2_transpose(const mat3x2 m, mat2x3 dest) {
   dest[0][0] = m[0][0];  dest[0][1] = m[1][0];  dest[0][2] = m[2][0];
   dest[1][0] = m[0][1];  dest[1][1] = m[1][1];  dest[1][2] = m[2][1];
 }
