@@ -34,8 +34,8 @@ Functions:
 #. :c:func:`glm_mat4_mulN`
 #. :c:func:`glm_mat4_mulv`
 #. :c:func:`glm_mat4_mulv3`
-#. :c:func:`glm_mat3_trace`
-#. :c:func:`glm_mat3_trace3`
+#. :c:func:`glm_mat4_trace`
+#. :c:func:`glm_mat4_trace3`
 #. :c:func:`glm_mat4_quat`
 #. :c:func:`glm_mat4_transpose_to`
 #. :c:func:`glm_mat4_transpose`
@@ -47,6 +47,7 @@ Functions:
 #. :c:func:`glm_mat4_swap_col`
 #. :c:func:`glm_mat4_swap_row`
 #. :c:func:`glm_mat4_rmc`
+#. :c:func:`glm_mat4_make`
 
 Functions documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +70,7 @@ Functions documentation
 
 .. c:function:: void  glm_mat4_identity(mat4 mat)
 
-    copy identity mat4 to mat, or makes mat to identiy
+    copy identity mat4 to mat, or makes mat to identity
 
     Parameters:
       | *[out]* **mat**  matrix
@@ -118,6 +119,7 @@ Functions documentation
 .. c:function:: void  glm_mat4_mul(mat4 m1, mat4 m2, mat4 dest)
 
     multiply m1 and m2 to dest
+
     m1, m2 and dest matrices can be same matrix, it is possible to write this:
 
     .. code-block:: c
@@ -156,7 +158,6 @@ Functions documentation
     Parameters:
       | *[in]*  **m**     mat4 (left)
       | *[in]*  **v**     vec4 (right, column vector)
-      | *[in]*  **last**  4th item to make it vec4
       | *[out]* **dest**  vec4 (result, column vector)
 
 .. c:function:: void  glm_mat4_mulv3(mat4 m, vec3 v, float last, vec3 dest)
@@ -213,7 +214,7 @@ Functions documentation
 
 .. c:function:: void  glm_mat4_transpose(mat4 m)
 
-    tranpose mat4 and store result in same matrix
+    transpose mat4 and store result in same matrix
 
     Parameters:
       | *[in]*  **m**     source
@@ -262,7 +263,7 @@ Functions documentation
     | e.g Newton-Raphson. this should work faster than normal,
     | to get more precise use glm_mat4_inv version.
 
-    | NOTE: You will lose precision, glm_mat4_inv is more accurate
+    .. note:: You will lose precision, glm_mat4_inv is more accurate
 
     Parameters:
       | *[in]*  **mat**   source
@@ -302,3 +303,13 @@ Functions documentation
 
     Returns:
         scalar value e.g. Matrix1x1
+
+.. c:function:: void glm_mat4_make(float * __restrict src, mat4 dest)
+
+    Create mat4 matrix from pointer
+
+    .. note:: **@src** must contain at least 16 elements.
+
+    Parameters:
+      | *[in]*  **src**  pointer to an array of floats
+      | *[out]* **dest** destination matrix4x4

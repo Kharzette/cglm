@@ -1,6 +1,6 @@
 .. default-domain:: C
 
-Options
+🛠️ Options
 ===============================================================================
 
 A few options are provided via macros.
@@ -29,7 +29,7 @@ have to compile cglm with **CGLM_ALL_UNALIGNED** macro.
  if you do not know what you are doing. Because a cglm header included
  via 'project A' may force types to be aligned and another cglm header
  included via 'project B' may not require alignment. In this case
- cglm functions will read from and write to **INVALID MEMORY LOCATIONs**.
+ cglm functions will read from and write to **INVALID MEMORY LOCATIONSNs**.
 
  ALWAYS USE SAME CONFIGURATION / OPTION for **cglm** if you have multiple projects.
 
@@ -43,7 +43,7 @@ By starting **v0.8.3** cglm provides options to switch between clipspace configu
 Clipspace related files are located at `include/cglm/[struct]/clipspace.h` but 
 these are included in related files like `cam.h`. If you don't want to change your existing 
 clipspace configuration and want to use different clipspace function like `glm_lookat_zo` or `glm_lookat_lh_zo`...
-then you can include individual headers or just define `CGLM_CLIPSPACE_INCLUDE_ALL` which will iclude all headers for you.
+then you can include individual headers or just define `CGLM_CLIPSPACE_INCLUDE_ALL` which will include all headers for you.
 
 1. **CGLM_CLIPSPACE_INCLUDE_ALL**
 2. **CGLM_FORCE_DEPTH_ZERO_TO_ONE**
@@ -89,6 +89,16 @@ You have to extra options for dot product: **CGLM_SSE4_DOT** and **CGLM_SSE3_DOT
 - If **SSE3** is enabled then you can define **CGLM_SSE3_DOT** to force cglm to use **_mm_hadd_ps** instructions.
 
 otherwise cglm will use custom cglm's hadd functions which are optimized too.
+
+Struct API Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To configure the Struct API namespace, you can define the following macros before including the cglm/struct.h header:
+
+- **CGLM_OMIT_NS_FROM_STRUCT_API**: omits CGLM_STRUCT_API_NS (`glms_`) namespace completely if there is sub namespace e.g `mat4_`, `vec4_` ... DEFAULT is not defined
+- **CGLM_STRUCT_API_NS**:           define name space for struct api, DEFAULT is **glms**
+- **CGLM_STRUCT_API_NAME_SUFFIX**:  define name suffix, DEFAULT is **empty** e.g defining it as #define CGLM_STRUCT_API_NAME_SUFFIX  s will add s suffix to mat4_mul -> mat4s_mul
+
 
 Print Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

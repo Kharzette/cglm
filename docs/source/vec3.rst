@@ -13,7 +13,7 @@ Header: cglm/vec3.h
 We mostly use vectors in graphics math, to make writing code faster
 and easy to read, some *vec3* functions are aliased in global namespace.
 For instance :c:func:`glm_dot` is alias of :c:func:`glm_vec3_dot`,
-alias means inline wrapper here. There is no call verison of alias functions
+alias means inline wrapper here. There is no call version of alias functions
 
 There are also functions for rotating *vec3* vector. **_m4**, **_m3** prefixes
 rotate *vec3* with matrix.
@@ -79,6 +79,7 @@ Functions:
 #. :c:func:`glm_vec3_ortho`
 #. :c:func:`glm_vec3_clamp`
 #. :c:func:`glm_vec3_lerp`
+#. :c:func:`glm_vec3_make`
 
 Functions documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,7 +148,7 @@ Functions documentation
     norm * norm (magnitude) of vector
 
     we can use this func instead of calling norm * norm, because it would call
-    sqrtf fuction twice but with this func we can avoid func call, maybe this is
+    sqrtf function twice but with this func we can avoid func call, maybe this is
     not good name for this func
 
     Parameters:
@@ -308,7 +309,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec3_flipsign(vec3 v)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec3_negate`
 
@@ -317,7 +318,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec3_flipsign_to(vec3 v, vec3 dest)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec3_negate_to`
 
@@ -327,7 +328,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec3_inv(vec3 v)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec3_negate`
 
@@ -336,7 +337,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec3_inv_to(vec3 v, vec3 dest)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec3_negate_to`
 
@@ -376,7 +377,7 @@ Functions documentation
 
 .. c:function:: float  glm_vec3_angle(vec3 v1, vec3 v2)
 
-    angle betwen two vector
+    angle between two vector
 
     Parameters:
       | *[in]*  **v1**   vector1
@@ -501,3 +502,13 @@ Functions documentation
       | *[in]*  **to**     to value
       | *[in]*  **t**      interpolant (amount) clamped between 0 and 1
       | *[out]* **dest**   destination
+
+.. c:function:: void glm_vec3_make(float * __restrict src, vec3 dest)
+
+    Create three dimensional vector from pointer
+
+    .. note::: **@src** must contain at least 3 elements.
+
+    Parameters:
+      | *[in]*  **src**  pointer to an array of floats
+      | *[out]* **dest** destination vector

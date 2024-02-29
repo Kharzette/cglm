@@ -16,6 +16,24 @@ glmc_vec2(float * __restrict v, vec2 dest) {
 
 CGLM_EXPORT
 void
+glmc_vec2_fill(const vec2 v, float val) {
+  glm_vec2_fill(v, val);
+}
+
+CGLM_EXPORT
+bool
+glmc_vec2_eq(const vec2 v, float val) {
+  return glm_vec2_eq(v, val);
+}
+
+CGLM_EXPORT
+bool
+glmc_vec2_eqv(const vec2 a, const vec2 b) {
+  return glm_vec2_eqv(a, b);
+}
+
+CGLM_EXPORT
+void
 glmc_vec2_copy(const vec2 a, vec2 dest) {
   glm_vec2_copy(a, dest);
 }
@@ -148,6 +166,43 @@ glmc_vec2_minadd(const vec2 a, const vec2 b, vec2 dest) {
 
 CGLM_EXPORT
 void
+glmc_vec2_subsub(const vec2 a, const vec2 b, vec2 dest) {
+  glm_vec2_subsub(a, b, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_vec2_addsub(const vec2 a, const vec2 b, vec2 dest) {
+  glm_vec2_addsub(a, b, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_vec2_mulsub(const vec2 a, const vec2 b, vec2 dest) {
+  glm_vec2_mulsub(a, b, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_vec2_mulsubs(const vec2 a, float s, vec2 dest) {
+  glm_vec2_mulsubs(a, s, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_vec2_maxsub(const vec2 a, const vec2 b, vec2 dest) {
+  glm_vec2_maxsub(a, b, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_vec2_minsub(const vec2 a, const vec2 b, vec2 dest) {
+  glm_vec2_minsub(a, b, dest);
+}
+
+
+CGLM_EXPORT
+void
 glmc_vec2_negate_to(const vec2 v, vec2 dest) {
   glm_vec2_negate_to(v, dest);
 }
@@ -174,6 +229,12 @@ CGLM_EXPORT
 void
 glmc_vec2_rotate(const vec2 v, float angle, vec2 dest) {
   glm_vec2_rotate(v, angle, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_vec2_center(vec2 a, vec2 b, vec2 dest) {
+  glm_vec2_center(a, b, dest);
 }
 
 CGLM_EXPORT
@@ -234,4 +295,10 @@ CGLM_EXPORT
 void
 glmc_vec2_complex_conjugate(const vec2 a, vec2 dest) {
   glm_vec2_complex_conjugate(a, dest);
+}
+
+CGLM_EXPORT
+void
+glmc_vec2_make(float * __restrict src, vec2 dest) {
+  glm_vec2_make(src, dest);
 }

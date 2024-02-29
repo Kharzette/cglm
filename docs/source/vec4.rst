@@ -59,6 +59,7 @@ Functions:
 #. :c:func:`glm_vec4_clamp`
 #. :c:func:`glm_vec4_lerp`
 #. :c:func:`glm_vec4_cubic`
+#. :c:func:`glm_vec4_make`
 
 Functions documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,6 +108,13 @@ Functions documentation
     Parameters:
       | *[in, out]*  **v**     vector
 
+.. c:function:: void  glm_vec4_one(vec4 v)
+
+    makes all members one
+
+    Parameters:
+      | *[in, out]*  **v**     vector
+
 .. c:function:: float  glm_vec4_dot(vec4 a, vec4 b)
 
     dot product of vec4
@@ -123,7 +131,7 @@ Functions documentation
     norm * norm (magnitude) of vector
 
     we can use this func instead of calling norm * norm, because it would call
-    sqrtf fuction twice but with this func we can avoid func call, maybe this is
+    sqrtf function twice but with this func we can avoid func call, maybe this is
     not good name for this func
 
     Parameters:
@@ -283,7 +291,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec4_flipsign(vec4 v)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec4_negate`
 
@@ -292,7 +300,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec4_flipsign_to(vec4 v, vec4 dest)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec4_negate_to`
 
@@ -302,7 +310,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec4_inv(vec4 v)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec4_negate`
 
@@ -311,7 +319,7 @@ Functions documentation
 
 .. c:function:: void  glm_vec4_inv_to(vec4 v, vec4 dest)
 
-    **DEPRACATED!**
+    **DEPRECATED!**
 
     use :c:func:`glm_vec4_negate_to`
 
@@ -406,3 +414,13 @@ Functions documentation
     Parameters:
       | *[in]*  **s**      parameter
       | *[out]* **dest**   destination
+
+.. c:function:: void glm_vec4_make(float * __restrict src, vec4 dest)
+
+    Create four dimensional vector from pointer
+
+    .. note:: **@src** must contain at least 4 elements.
+
+    Parameters:
+      | *[in]*  **src**  pointer to an array of floats
+      | *[out]* **dest** destination vector

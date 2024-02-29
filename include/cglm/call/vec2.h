@@ -107,7 +107,31 @@ glmc_vec2_minadd(const vec2 a, const vec2 b, vec2 dest);
 
 CGLM_EXPORT
 void
-glmc_vec2_negate_to(const vec2 v, vec2 dest);
+glmc_vec2_subsub(const vec2 a, const vec2 b, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_addsub(const vec2 a, const vec2 b, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_mulsub(const vec2 a, const vec2 b, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_mulsubs(const vec2 a, float s, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_maxsub(const vec2 a, const vec2 b, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_minsub(const vec2 a, const vec2 b, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_negate_to(const vec2 v, const vec2 dest);
 
 CGLM_EXPORT
 void
@@ -124,6 +148,10 @@ glmc_vec2_normalize_to(const vec2 v, vec2 dest);
 CGLM_EXPORT
 void
 glmc_vec2_rotate(const vec2 v, float angle, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_center(vec2 a, vec2 b, vec2 dest);
 
 CGLM_EXPORT
 float
@@ -164,6 +192,10 @@ glmc_vec2_complex_div(const vec2 a, const vec2 b, vec2 dest);
 CGLM_EXPORT
 void
 glmc_vec2_complex_conjugate(const vec2 a, vec2 dest);
+
+CGLM_EXPORT
+void
+glmc_vec2_make(float * __restrict src, vec2 dest);
 
 #ifdef __cplusplus
 }

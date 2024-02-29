@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8.2)
 project(cglm
-  VERSION 0.8.9
+  VERSION 0.9.3
   HOMEPAGE_URL https://github.com/recp/cglm
   DESCRIPTION "OpenGL Mathematics (glm) for C"
   LANGUAGES C
@@ -15,6 +15,11 @@ option(CGLM_SHARED "Shared build" ON)
 option(CGLM_STATIC "Static build" OFF)
 option(CGLM_USE_C99 "" OFF)
 option(CGLM_USE_TEST "Enable Tests" OFF)
+
+if(CMAKE_SYSTEM_NAME STREQUAL WASI)
+  set(CGLM_STATIC ON CACHE BOOL "Static option" FORCE)
+  set(CGLM_SHARED OFF CACHE BOOL "Shared option" FORCE)
+endif()
 
 if(NOT CGLM_STATIC AND CGLM_SHARED)
   set(CGLM_BUILD SHARED)
@@ -38,10 +43,12 @@ if(MSVC)
     string(REGEX REPLACE "/RTC(su|[1su])" "" ${flag_var} "${${flag_var}}")
   endforeach(flag_var)
 else()
-  add_compile_options(-Wall -Werror -O3)
+  add_compile_options(-Wall -O3)
 endif()
 
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+get_directory_property(hasParent PARENT_DIRECTORY)
+
+if(NOT hasParent AND NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   message(STATUS "Setting build type to '${DEFAULT_BUILD_TYPE}' as none was specified.")
   set(CMAKE_BUILD_TYPE "${DEFAULT_BUILD_TYPE}" CACHE STRING "Choose the type of build." FORCE)
   # Set the possible values of build type for cmake-gui
@@ -72,8 +79,14 @@ add_library(${PROJECT_NAME}
   src/vec4.c
   src/ivec4.c
   src/mat2.c
+  src/mat2x3.c
+  src/mat2x4.c
   src/mat3.c
+  src/mat3x2.c
+  src/mat3x4.c
   src/mat4.c
+  src/mat4x2.c
+  src/mat4x3.c
   src/plane.c
   src/frustum.c
   src/box.c
