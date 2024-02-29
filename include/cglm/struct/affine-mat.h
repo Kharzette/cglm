@@ -40,7 +40,7 @@
  */
 CGLM_INLINE
 mat4s
-glms_mul(mat4s m1, mat4s m2){
+glms_mul(const mat4s m1, const mat4s m2){
   mat4s r;
   glm_mul(m1.raw, m2.raw, r.raw);
   return r;
@@ -64,7 +64,7 @@ glms_mul(mat4s m1, mat4s m2){
  */
 CGLM_INLINE
 mat4s
-glms_mul_rot(mat4s m1, mat4s m2){
+glms_mul_rot(const mat4s m1, const mat4s m2){
   mat4s r;
   glm_mul_rot(m1.raw, m2.raw, r.raw);
   return r;

@@ -75,7 +75,7 @@
  */
 CGLM_INLINE
 mat4s
-glms_mat4_(ucopy)(mat4s mat) {
+glms_mat4_(ucopy)(const mat4s mat) {
   mat4s r;
   glm_mat4_ucopy(mat.raw, r.raw);
   return r;
@@ -89,7 +89,7 @@ glms_mat4_(ucopy)(mat4s mat) {
  */
 CGLM_INLINE
 mat4s
-glms_mat4_(copy)(mat4s mat) {
+glms_mat4_(copy)(const mat4s mat) {
   mat4s r;
   glm_mat4_copy(mat.raw, r.raw);
   return r;
@@ -157,7 +157,7 @@ glms_mat4_(zero)(void) {
  */
 CGLM_INLINE
 mat3s
-glms_mat4_(pick3)(mat4s mat) {
+glms_mat4_(pick3)(const mat4s mat) {
   mat3s r;
   glm_mat4_pick3(mat.raw, r.raw);
   return r;
@@ -173,7 +173,7 @@ glms_mat4_(pick3)(mat4s mat) {
  */
 CGLM_INLINE
 mat3s
-glms_mat4_(pick3t)(mat4s mat) {
+glms_mat4_(pick3t)(const mat4s mat) {
   mat3s r;
   glm_mat4_pick3t(mat.raw, r.raw);
   return r;
@@ -209,7 +209,7 @@ glms_mat4_(ins3)(mat3s mat, mat4s dest) {
  */
 CGLM_INLINE
 mat4s
-glms_mat4_(mul)(mat4s m1, mat4s m2) {
+glms_mat4_(mul)(const mat4s m1, const mat4s m2) {
   mat4s r;
   glm_mat4_mul(m1.raw, m2.raw, r.raw);
   return r;
@@ -236,7 +236,7 @@ glms_mat4_(mul)(mat4s m1, mat4s m2) {
  */
 CGLM_INLINE
 mat4s
-glms_mat4_(mulN)(mat4s * __restrict matrices[], uint32_t len) {
+glms_mat4_(mulN)(const mat4s * __restrict matrices[], uint32_t len) {
   CGLM_ALIGN_MAT mat4s r = GLMS_MAT4_IDENTITY_INIT;
   size_t i;
 
@@ -256,7 +256,7 @@ glms_mat4_(mulN)(mat4s * __restrict matrices[], uint32_t len) {
  */
 CGLM_INLINE
 vec4s
-glms_mat4_(mulv)(mat4s m, vec4s v) {
+glms_mat4_(mulv)(const mat4s m, const vec4s v) {
   vec4s r;
   glm_mat4_mulv(m.raw, v.raw, r.raw);
   return r;
@@ -271,7 +271,7 @@ glms_mat4_(mulv)(mat4s m, vec4s v) {
  */
 CGLM_INLINE
 float
-glms_mat4_(trace)(mat4s m) {
+glms_mat4_(trace)(const mat4s m) {
   return glm_mat4_trace(m.raw);
 }
 
@@ -284,7 +284,7 @@ glms_mat4_(trace)(mat4s m) {
  */
 CGLM_INLINE
 float
-glms_mat4_(trace3)(mat4s m) {
+glms_mat4_(trace3)(const mat4s m) {
   return glm_mat4_trace3(m.raw);
 }
 
@@ -296,7 +296,7 @@ glms_mat4_(trace3)(mat4s m) {
  */
 CGLM_INLINE
 versors
-glms_mat4_(quat)(mat4s m) {
+glms_mat4_(quat)(const mat4s m) {
   versors r;
   glm_mat4_quat(m.raw, r.raw);
   return r;
@@ -312,7 +312,7 @@ glms_mat4_(quat)(mat4s m) {
  */
 CGLM_INLINE
 vec3s
-glms_mat4_(mulv3)(mat4s m, vec3s v, float last) {
+glms_mat4_(mulv3)(const mat4s m, const vec3s v, float last) {
   vec3s r;
   glm_mat4_mulv3(m.raw, v.raw, last, r.raw);
   return r;
@@ -372,7 +372,7 @@ glms_mat4_(scale)(mat4s m, float s) {
  */
 CGLM_INLINE
 float
-glms_mat4_(det)(mat4s mat) {
+glms_mat4_(det)(const mat4s mat) {
   return glm_mat4_det(mat.raw);
 }
 
@@ -384,7 +384,7 @@ glms_mat4_(det)(mat4s mat) {
  */
 CGLM_INLINE
 mat4s
-glms_mat4_(inv)(mat4s mat) {
+glms_mat4_(inv)(const mat4s mat) {
   mat4s r;
   glm_mat4_inv(mat.raw, r.raw);
   return r;
@@ -404,7 +404,7 @@ glms_mat4_(inv)(mat4s mat) {
  */
 CGLM_INLINE
 mat4s
-glms_mat4_(inv_fast)(mat4s mat) {
+glms_mat4_(inv_fast)(const mat4s mat) {
   mat4s r;
   glm_mat4_inv_fast(mat.raw, r.raw);
   return r;
@@ -456,7 +456,7 @@ glms_mat4_(swap_row)(mat4s mat, int row1, int row2) {
  */
 CGLM_INLINE
 float
-glms_mat4_(rmc)(vec4s r, mat4s m, vec4s c) {
+glms_mat4_(rmc)(const vec4s r, const mat4s m, const vec4s c) {
   return glm_mat4_rmc(r.raw, m.raw, c.raw);
 }
 

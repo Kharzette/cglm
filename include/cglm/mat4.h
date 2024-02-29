@@ -607,7 +607,7 @@ glm_mat4_scale(mat4 m, float s) {
  */
 CGLM_INLINE
 float
-glm_mat4_det(mat4 mat) {
+glm_mat4_det(const mat4 mat) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   return glm_mat4_det_wasm(mat);
 #elif defined( __SSE__ ) || defined( __SSE2__ )

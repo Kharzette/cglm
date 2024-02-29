@@ -29,15 +29,15 @@ glmc_ortho(float left,   float right,
 
 CGLM_EXPORT
 void
-glmc_ortho_aabb(vec3 box[2], mat4 dest);
+glmc_ortho_aabb(const vec3 box[2], mat4 dest);
 
 CGLM_EXPORT
 void
-glmc_ortho_aabb_p(vec3 box[2], float padding, mat4 dest);
+glmc_ortho_aabb_p(const vec3 box[2], float padding, mat4 dest);
 
 CGLM_EXPORT
 void
-glmc_ortho_aabb_pz(vec3 box[2], float padding, mat4 dest);
+glmc_ortho_aabb_pz(const vec3 box[2], float padding, mat4 dest);
 
 CGLM_EXPORT
 void
@@ -65,19 +65,19 @@ glmc_perspective_resize(float aspect, mat4 proj);
 
 CGLM_EXPORT
 void
-glmc_lookat(vec3 eye, vec3 center, vec3 up, mat4 dest);
+glmc_lookat(const vec3 eye, const vec3 center, const vec3 up, mat4 dest);
 
 CGLM_EXPORT
 void
-glmc_look(vec3 eye, vec3 dir, vec3 up, mat4 dest);
+glmc_look(const vec3 eye, const vec3 dir, const vec3 up, mat4 dest);
 
 CGLM_EXPORT
 void
-glmc_look_anyup(vec3 eye, vec3 dir, mat4 dest);
+glmc_look_anyup(const vec3 eye, const vec3 dir, mat4 dest);
 
 CGLM_EXPORT
 void
-glmc_persp_decomp(mat4 proj,
+glmc_persp_decomp(const mat4 proj,
                   float * __restrict nearZ,
                   float * __restrict farZ,
                   float * __restrict top,
@@ -87,45 +87,45 @@ glmc_persp_decomp(mat4 proj,
 
 CGLM_EXPORT
 void
-glmc_persp_decompv(mat4 proj, float dest[6]);
+glmc_persp_decompv(const mat4 proj, float dest[6]);
 
 CGLM_EXPORT
 void
-glmc_persp_decomp_x(mat4 proj,
+glmc_persp_decomp_x(const mat4 proj,
                     float * __restrict left,
                     float * __restrict right);
 
 CGLM_EXPORT
 void
-glmc_persp_decomp_y(mat4 proj,
+glmc_persp_decomp_y(const mat4 proj,
                     float * __restrict top,
                     float * __restrict bottom);
 
 CGLM_EXPORT
 void
-glmc_persp_decomp_z(mat4 proj,
+glmc_persp_decomp_z(const mat4 proj,
                     float * __restrict nearZ,
                     float * __restrict farZ);
 
 CGLM_EXPORT
 void
-glmc_persp_decomp_far(mat4 proj, float * __restrict farZ);
+glmc_persp_decomp_far(const mat4 proj, float * __restrict farZ);
 
 CGLM_EXPORT
 void
-glmc_persp_decomp_near(mat4 proj, float * __restrict nearZ);
+glmc_persp_decomp_near(const mat4 proj, float * __restrict nearZ);
 
 CGLM_EXPORT
 float
-glmc_persp_fovy(mat4 proj);
+glmc_persp_fovy(const mat4 proj);
 
 CGLM_EXPORT
 float
-glmc_persp_aspect(mat4 proj);
+glmc_persp_aspect(const mat4 proj);
 
 CGLM_EXPORT
 void
-glmc_persp_sizes(mat4 proj, float fovy, vec4 dest);
+glmc_persp_sizes(const mat4 proj, float fovy, vec4 dest);
 
 #ifdef __cplusplus
 }

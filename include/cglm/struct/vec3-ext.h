@@ -77,7 +77,7 @@ glms_vec3_(fill)(float val) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(eq)(vec3s v, float val) {
+glms_vec3_(eq)(const vec3s v, float val) {
   return glm_vec3_eq(v.raw, val);
 }
 
@@ -89,7 +89,7 @@ glms_vec3_(eq)(vec3s v, float val) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(eq_eps)(vec3s v, float val) {
+glms_vec3_(eq_eps)(const vec3s v, float val) {
   return glm_vec3_eq_eps(v.raw, val);
 }
 
@@ -100,7 +100,7 @@ glms_vec3_(eq_eps)(vec3s v, float val) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(eq_all)(vec3s v) {
+glms_vec3_(eq_all)(const vec3s v) {
   return glm_vec3_eq_all(v.raw);
 }
 
@@ -112,7 +112,7 @@ glms_vec3_(eq_all)(vec3s v) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(eqv)(vec3s a, vec3s b) {
+glms_vec3_(eqv)(const vec3s a, const vec3s b) {
   return glm_vec3_eqv(a.raw, b.raw);
 }
 
@@ -124,7 +124,7 @@ glms_vec3_(eqv)(vec3s a, vec3s b) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(eqv_eps)(vec3s a, vec3s b) {
+glms_vec3_(eqv_eps)(const vec3s a, const vec3s b) {
   return glm_vec3_eqv_eps(a.raw, b.raw);
 }
 
@@ -135,7 +135,7 @@ glms_vec3_(eqv_eps)(vec3s a, vec3s b) {
  */
 CGLM_INLINE
 float
-glms_vec3_(max)(vec3s v) {
+glms_vec3_(max)(const vec3s v) {
   return glm_vec3_max(v.raw);
 }
 
@@ -146,7 +146,7 @@ glms_vec3_(max)(vec3s v) {
  */
 CGLM_INLINE
 float
-glms_vec3_(min)(vec3s v) {
+glms_vec3_(min)(const vec3s v) {
   return glm_vec3_min(v.raw);
 }
 
@@ -158,7 +158,7 @@ glms_vec3_(min)(vec3s v) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(isnan)(vec3s v) {
+glms_vec3_(isnan)(const vec3s v) {
   return glm_vec3_isnan(v.raw);
 }
 
@@ -170,7 +170,7 @@ glms_vec3_(isnan)(vec3s v) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(isinf)(vec3s v) {
+glms_vec3_(isinf)(const vec3s v) {
   return glm_vec3_isinf(v.raw);
 }
 
@@ -182,7 +182,7 @@ glms_vec3_(isinf)(vec3s v) {
  */
 CGLM_INLINE
 bool
-glms_vec3_(isvalid)(vec3s v) {
+glms_vec3_(isvalid)(const vec3s v) {
   return glm_vec3_isvalid(v.raw);
 }
 
@@ -196,7 +196,7 @@ glms_vec3_(isvalid)(vec3s v) {
  */
 CGLM_INLINE
 vec3s
-glms_vec3_(sign)(vec3s v) {
+glms_vec3_(sign)(const vec3s v) {
   vec3s r;
   glm_vec3_sign(v.raw, r.raw);
   return r;
@@ -210,7 +210,7 @@ glms_vec3_(sign)(vec3s v) {
  */
 CGLM_INLINE
 vec3s
-glms_vec3_(abs)(vec3s v) {
+glms_vec3_(abs)(const vec3s v) {
   vec3s r;
   glm_vec3_abs(v.raw, r.raw);
   return r;
@@ -224,7 +224,7 @@ glms_vec3_(abs)(vec3s v) {
  */
 CGLM_INLINE
 vec3s
-glms_vec3_(fract)(vec3s v) {
+glms_vec3_(fract)(const vec3s v) {
   vec3s r;
   glm_vec3_fract(v.raw, r.raw);
   return r;
@@ -239,7 +239,7 @@ glms_vec3_(fract)(vec3s v) {
  */
 CGLM_INLINE
 float
-glms_vec3_(hadd)(vec3s v) {
+glms_vec3_(hadd)(const vec3s v) {
   return glm_vec3_hadd(v.raw);
 }
 
@@ -251,7 +251,7 @@ glms_vec3_(hadd)(vec3s v) {
  */
 CGLM_INLINE
 vec3s
-glms_vec3_(sqrt)(vec3s v) {
+glms_vec3_(sqrt)(const vec3s v) {
   vec3s r;
   glm_vec3_sqrt(v.raw, r.raw);
   return r;

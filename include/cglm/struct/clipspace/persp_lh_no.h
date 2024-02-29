@@ -159,7 +159,7 @@ glms_perspective_resize_lh_no(mat4s proj, float aspect) {
  */
 CGLM_INLINE
 void
-glms_persp_decomp_lh_no(mat4s proj,
+glms_persp_decomp_lh_no(const mat4s proj,
                         float * __restrict nearZ, float * __restrict farZ,
                         float * __restrict top,   float * __restrict bottom,
                         float * __restrict left,  float * __restrict right) {
@@ -177,7 +177,7 @@ glms_persp_decomp_lh_no(mat4s proj,
  */
 CGLM_INLINE
 void
-glms_persp_decompv_lh_no(mat4s proj, float dest[6]) {
+glms_persp_decompv_lh_no(const mat4s proj, float dest[6]) {
   glm_persp_decompv_lh_no(proj.raw, dest);
 }
 
@@ -193,7 +193,7 @@ glms_persp_decompv_lh_no(mat4s proj, float dest[6]) {
  */
 CGLM_INLINE
 void
-glms_persp_decomp_x_lh_no(mat4s proj,
+glms_persp_decomp_x_lh_no(const mat4s proj,
                           float * __restrict left,
                           float * __restrict right) {
   glm_persp_decomp_x_lh_no(proj.raw, left, right);
@@ -211,7 +211,7 @@ glms_persp_decomp_x_lh_no(mat4s proj,
  */
 CGLM_INLINE
 void
-glms_persp_decomp_y_lh_no(mat4s proj,
+glms_persp_decomp_y_lh_no(const mat4s proj,
                           float * __restrict top,
                           float * __restrict bottom) {
   glm_persp_decomp_y_lh_no(proj.raw, top, bottom);
@@ -229,7 +229,7 @@ glms_persp_decomp_y_lh_no(mat4s proj,
  */
 CGLM_INLINE
 void
-glms_persp_decomp_z_lh_no(mat4s proj,
+glms_persp_decomp_z_lh_no(const mat4s proj,
                           float * __restrict nearZ,
                           float * __restrict farZ) {
   glm_persp_decomp_z_lh_no(proj.raw, nearZ, farZ);
@@ -245,7 +245,7 @@ glms_persp_decomp_z_lh_no(mat4s proj,
  */
 CGLM_INLINE
 void
-glms_persp_decomp_far_lh_no(mat4s proj, float * __restrict farZ) {
+glms_persp_decomp_far_lh_no(const mat4s proj, float * __restrict farZ) {
   glm_persp_decomp_far_lh_no(proj.raw, farZ);
 }
 
@@ -259,7 +259,7 @@ glms_persp_decomp_far_lh_no(mat4s proj, float * __restrict farZ) {
  */
 CGLM_INLINE
 void
-glms_persp_decomp_near_lh_no(mat4s proj, float * __restrict nearZ) {
+glms_persp_decomp_near_lh_no(const mat4s proj, float * __restrict nearZ) {
   glm_persp_decomp_near_lh_no(proj.raw, nearZ);
 }
 
@@ -275,7 +275,7 @@ glms_persp_decomp_near_lh_no(mat4s proj, float * __restrict nearZ) {
  */
 CGLM_INLINE
 float
-glms_persp_fovy_lh_no(mat4s proj) {
+glms_persp_fovy_lh_no(const mat4s proj) {
   return glm_persp_fovy_lh_no(proj.raw);
 }
 
@@ -288,7 +288,7 @@ glms_persp_fovy_lh_no(mat4s proj) {
  */
 CGLM_INLINE
 float
-glms_persp_aspect_lh_no(mat4s proj) {
+glms_persp_aspect_lh_no(const mat4s proj) {
   return glm_persp_aspect_lh_no(proj.raw);
 }
 
@@ -303,7 +303,7 @@ glms_persp_aspect_lh_no(mat4s proj) {
  */
 CGLM_INLINE
 vec4s
-glms_persp_sizes_lh_no(mat4s proj, float fovy) {
+glms_persp_sizes_lh_no(const mat4s proj, float fovy) {
   vec4s dest;
   glm_persp_sizes_lh_no(proj.raw, fovy, dest.raw);
   return dest;

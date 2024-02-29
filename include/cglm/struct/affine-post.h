@@ -39,7 +39,7 @@
  */
 CGLM_INLINE
 mat4s
-glms_translated(mat4s m, vec3s v) {
+glms_translated(mat4s m, const vec3s v) {
   glm_translated(m.raw, v.raw);
   return m;
 }
@@ -144,7 +144,7 @@ glms_rotated_z(mat4s m, float angle) {
  */
 CGLM_INLINE
 mat4s
-glms_rotated(mat4s m, float angle, vec3s axis) {
+glms_rotated(mat4s m, float angle, const vec3s axis) {
   glm_rotated(m.raw, angle, axis.raw);
   return m;
 }
@@ -161,7 +161,7 @@ glms_rotated(mat4s m, float angle, vec3s axis) {
  */
 CGLM_INLINE
 mat4s
-glms_rotated_at(mat4s m, vec3s pivot, float angle, vec3s axis) {
+glms_rotated_at(mat4s m, const vec3s pivot, float angle, const vec3s axis) {
   glm_rotated_at(m.raw, pivot.raw, angle, axis.raw);
   return m;
 }
@@ -176,7 +176,7 @@ glms_rotated_at(mat4s m, vec3s pivot, float angle, vec3s axis) {
  */
 CGLM_INLINE
 mat4s
-glms_spinned(mat4s m, float angle, vec3s axis) {
+glms_spinned(mat4s m, float angle, const vec3s axis) {
   glm_spinned(m.raw, angle, axis.raw);
   return m;
 }

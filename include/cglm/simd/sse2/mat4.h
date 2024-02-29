@@ -112,7 +112,7 @@ glm_mat4_mulv_sse2(const mat4 m, const vec4 v, vec4 dest) {
 
 CGLM_INLINE
 float
-glm_mat4_det_sse2(mat4 mat) {
+glm_mat4_det_sse2(const mat4 mat) {
   __m128 r0, r1, r2, r3, x0, x1, x2;
 
   /* 127 <- 0, [square] det(A) = det(At) */

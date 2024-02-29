@@ -39,7 +39,7 @@
  */
 CGLM_INLINE
 void
-glm_mat2x4_copy(mat2x4 mat, mat2x4 dest) {
+glm_mat2x4_copy(const mat2x4 mat, mat2x4 dest) {
   glm_vec4_ucopy(mat[0], dest[0]);
   glm_vec4_ucopy(mat[1], dest[1]);
 }
@@ -89,7 +89,7 @@ glm_mat2x4_make(const float * __restrict src, mat2x4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat2x4_mul(mat2x4 m1, mat4x2 m2, mat4 dest) {
+glm_mat2x4_mul(const mat2x4 m1, const mat4x2 m2, mat4 dest) {
   float a00 = m1[0][0], a01 = m1[0][1], a02 = m1[0][2], a03 = m1[0][3],
         a10 = m1[1][0], a11 = m1[1][1], a12 = m1[1][2], a13 = m1[1][3],
 
@@ -128,7 +128,7 @@ glm_mat2x4_mul(mat2x4 m1, mat4x2 m2, mat4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat2x4_mulv(mat2x4 m, vec2 v, vec4 dest) {
+glm_mat2x4_mulv(const mat2x4 m, const vec2 v, vec4 dest) {
   float v0 = v[0], v1 = v[1];
 
   dest[0] = m[0][0] * v0 + m[1][0] * v1;
@@ -145,7 +145,7 @@ glm_mat2x4_mulv(mat2x4 m, vec2 v, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat2x4_transpose(mat2x4 m, mat4x2 dest) {
+glm_mat2x4_transpose(const mat2x4 m, mat4x2 dest) {
   dest[0][0] = m[0][0];  dest[0][1] = m[1][0];
   dest[1][0] = m[0][1];  dest[1][1] = m[1][1];
   dest[2][0] = m[0][2];  dest[2][1] = m[1][2];

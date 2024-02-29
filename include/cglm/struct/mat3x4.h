@@ -74,7 +74,7 @@ glms_mat3x4_(make)(const float * __restrict src) {
  */
 CGLM_INLINE
 mat4s
-glms_mat3x4_(mul)(mat3x4s m1, mat4x3s m2) {
+glms_mat3x4_(mul)(const mat3x4s m1, const mat4x3s m2) {
   mat4s r;
   glm_mat3x4_mul(m1.raw, m2.raw, r.raw);
   return r;
@@ -89,7 +89,7 @@ glms_mat3x4_(mul)(mat3x4s m1, mat4x3s m2) {
  */
 CGLM_INLINE
 vec4s
-glms_mat3x4_(mulv)(mat3x4s m, vec3s v) {
+glms_mat3x4_(mulv)(const mat3x4s m, const vec3s v) {
   vec4s r;
   glm_mat3x4_mulv(m.raw, v.raw, r.raw);
   return r;

@@ -72,7 +72,7 @@
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4(ivec3s v3, int last) {
+glms_ivec4(const ivec3s v3, int last) {
   ivec4s r;
   glm_ivec4(v3.raw, last, r.raw);
   return r;
@@ -87,7 +87,7 @@ glms_ivec4(ivec3s v3, int last) {
  */
 CGLM_INLINE
 void
-glms_ivec4_(pack)(ivec4s dst[], ivec4 src[], size_t len) {
+glms_ivec4_(pack)(ivec4s dst[], const ivec4 src[], size_t len) {
   size_t i;
 
   for (i = 0; i < len; i++) {
@@ -104,7 +104,7 @@ glms_ivec4_(pack)(ivec4s dst[], ivec4 src[], size_t len) {
  */
 CGLM_INLINE
 void
-glms_ivec4_(unpack)(ivec4 dst[], ivec4s src[], size_t len) {
+glms_ivec4_(unpack)(ivec4 dst[], const ivec4s src[], size_t len) {
   size_t i;
 
   for (i = 0; i < len; i++) {
@@ -147,7 +147,7 @@ glms_ivec4_(one)(void) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(add)(ivec4s a, ivec4s b) {
+glms_ivec4_(add)(const ivec4s a, const ivec4s b) {
   ivec4s r;
   glm_ivec4_add(a.raw, b.raw, r.raw);
   return r;
@@ -162,7 +162,7 @@ glms_ivec4_(add)(ivec4s a, ivec4s b) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(adds)(ivec4s v, int s) {
+glms_ivec4_(adds)(const ivec4s v, int s) {
   ivec4s r;
   glm_ivec4_adds(v.raw, s, r.raw);
   return r;
@@ -177,7 +177,7 @@ glms_ivec4_(adds)(ivec4s v, int s) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(sub)(ivec4s a, ivec4s b) {
+glms_ivec4_(sub)(const ivec4s a, const ivec4s b) {
   ivec4s r;
   glm_ivec4_sub(a.raw, b.raw, r.raw);
   return r;
@@ -192,7 +192,7 @@ glms_ivec4_(sub)(ivec4s a, ivec4s b) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(subs)(ivec4s v, int s) {
+glms_ivec4_(subs)(const ivec4s v, int s) {
   ivec4s r;
   glm_ivec4_subs(v.raw, s, r.raw);
   return r;
@@ -207,7 +207,7 @@ glms_ivec4_(subs)(ivec4s v, int s) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(mul)(ivec4s a, ivec4s b) {
+glms_ivec4_(mul)(const ivec4s a, const ivec4s b) {
   ivec4s r;
   glm_ivec4_mul(a.raw, b.raw, r.raw);
   return r;
@@ -222,7 +222,7 @@ glms_ivec4_(mul)(ivec4s a, ivec4s b) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(scale)(ivec4s v, int s) {
+glms_ivec4_(scale)(const ivec4s v, int s) {
   ivec4s r;
   glm_ivec4_scale(v.raw, s, r.raw);
   return r;
@@ -240,7 +240,7 @@ glms_ivec4_(scale)(ivec4s v, int s) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(addadd)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(addadd)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_addadd(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -257,7 +257,7 @@ glms_ivec4_(addadd)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(addadds)(ivec4s a, int s, ivec4s dest) {
+glms_ivec4_(addadds)(const ivec4s a, int s, ivec4s dest) {
   glm_ivec4_addadds(a.raw, s, dest.raw);
   return dest;
 }
@@ -274,7 +274,7 @@ glms_ivec4_(addadds)(ivec4s a, int s, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(subadd)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(subadd)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_subadd(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -291,7 +291,7 @@ glms_ivec4_(subadd)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(subadds)(ivec4s a, int s, ivec4s dest) {
+glms_ivec4_(subadds)(const ivec4s a, int s, ivec4s dest) {
   glm_ivec4_subadds(a.raw, s, dest.raw);
   return dest;
 }
@@ -308,7 +308,7 @@ glms_ivec4_(subadds)(ivec4s a, int s, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(muladd)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(muladd)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_muladd(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -325,7 +325,7 @@ glms_ivec4_(muladd)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(muladds)(ivec4s a, int s, ivec4s dest) {
+glms_ivec4_(muladds)(const ivec4s a, int s, ivec4s dest) {
   glm_ivec4_muladds(a.raw, s, dest.raw);
   return dest;
 }
@@ -342,7 +342,7 @@ glms_ivec4_(muladds)(ivec4s a, int s, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(maxadd)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(maxadd)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_maxadd(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -359,7 +359,7 @@ glms_ivec4_(maxadd)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(minadd)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(minadd)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_minadd(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -376,7 +376,7 @@ glms_ivec4_(minadd)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(subsub)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(subsub)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_subsub(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -393,7 +393,7 @@ glms_ivec4_(subsub)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(subsubs)(ivec4s a, int s, ivec4s dest) {
+glms_ivec4_(subsubs)(const ivec4s a, int s, ivec4s dest) {
   glm_ivec4_subsubs(a.raw, s, dest.raw);
   return dest;
 }
@@ -410,7 +410,7 @@ glms_ivec4_(subsubs)(ivec4s a, int s, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(addsub)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(addsub)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_addsub(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -427,7 +427,7 @@ glms_ivec4_(addsub)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(addsubs)(ivec4s a, int s, ivec4s dest) {
+glms_ivec4_(addsubs)(const ivec4s a, int s, ivec4s dest) {
   glm_ivec4_addsubs(a.raw, s, dest.raw);
   return dest;
 }
@@ -444,7 +444,7 @@ glms_ivec4_(addsubs)(ivec4s a, int s, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(mulsub)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(mulsub)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_mulsub(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -461,7 +461,7 @@ glms_ivec4_(mulsub)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(mulsubs)(ivec4s a, int s, ivec4s dest) {
+glms_ivec4_(mulsubs)(const ivec4s a, int s, ivec4s dest) {
   glm_ivec4_mulsubs(a.raw, s, dest.raw);
   return dest;
 }
@@ -478,7 +478,7 @@ glms_ivec4_(mulsubs)(ivec4s a, int s, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(maxsub)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(maxsub)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_maxsub(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -495,7 +495,7 @@ glms_ivec4_(maxsub)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE 
 ivec4s 
-glms_ivec4_(minsub)(ivec4s a, ivec4s b, ivec4s dest) {
+glms_ivec4_(minsub)(const ivec4s a, const ivec4s b, ivec4s dest) {
   glm_ivec4_minsub(a.raw, b.raw, dest.raw);
   return dest;
 }
@@ -509,7 +509,7 @@ glms_ivec4_(minsub)(ivec4s a, ivec4s b, ivec4s dest) {
  */
 CGLM_INLINE
 int
-glms_ivec4_(distance2)(ivec4s a, ivec4s b) {
+glms_ivec4_(distance2)(const ivec4s a, const ivec4s b) {
   return glm_ivec4_distance2(a.raw, b.raw);
 }
 
@@ -522,7 +522,7 @@ glms_ivec4_(distance2)(ivec4s a, ivec4s b) {
  */
 CGLM_INLINE
 float
-glms_ivec4_(distance)(ivec4s a, ivec4s b) {
+glms_ivec4_(distance)(const ivec4s a, const ivec4s b) {
   return glm_ivec4_distance(a.raw, b.raw);
 }
 
@@ -535,7 +535,7 @@ glms_ivec4_(distance)(ivec4s a, ivec4s b) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(maxv)(ivec4s a, ivec4s b) {
+glms_ivec4_(maxv)(const ivec4s a, const ivec4s b) {
   ivec4s r;
   glm_ivec4_maxv(a.raw, b.raw, r.raw);
   return r;
@@ -550,7 +550,7 @@ glms_ivec4_(maxv)(ivec4s a, ivec4s b) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(minv)(ivec4s a, ivec4s b) {
+glms_ivec4_(minv)(const ivec4s a, const ivec4s b) {
   ivec4s r;
   glm_ivec4_minv(a.raw, b.raw, r.raw);
   return r;
@@ -579,7 +579,7 @@ glms_ivec4_(clamp)(ivec4s v, int minVal, int maxVal) {
  */
 CGLM_INLINE
 ivec4s
-glms_ivec4_(abs)(ivec4s v) {
+glms_ivec4_(abs)(const ivec4s v) {
   ivec4s r;
   glm_ivec4_abs(v.raw, r.raw);
   return r;

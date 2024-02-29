@@ -523,7 +523,7 @@ glm_vec3_minadd(const vec3 a, const vec3 b, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_subsub(vec3 a, vec3 b, vec3 dest) {
+glm_vec3_subsub(const vec3 a, const vec3 b, vec3 dest) {
   dest[0] -= a[0] - b[0];
   dest[1] -= a[1] - b[1];
   dest[2] -= a[2] - b[2];
@@ -540,7 +540,7 @@ glm_vec3_subsub(vec3 a, vec3 b, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_addsub(vec3 a, vec3 b, vec3 dest) {
+glm_vec3_addsub(const vec3 a, const vec3 b, vec3 dest) {
   dest[0] -= a[0] + b[0];
   dest[1] -= a[1] + b[1];
   dest[2] -= a[2] + b[2];
@@ -557,7 +557,7 @@ glm_vec3_addsub(vec3 a, vec3 b, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_mulsub(vec3 a, vec3 b, vec3 dest) {
+glm_vec3_mulsub(const vec3 a, const vec3 b, vec3 dest) {
   dest[0] -= a[0] * b[0];
   dest[1] -= a[1] * b[1];
   dest[2] -= a[2] * b[2];
@@ -574,7 +574,7 @@ glm_vec3_mulsub(vec3 a, vec3 b, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_mulsubs(vec3 a, float s, vec3 dest) {
+glm_vec3_mulsubs(const vec3 a, float s, vec3 dest) {
   dest[0] -= a[0] * s;
   dest[1] -= a[1] * s;
   dest[2] -= a[2] * s;
@@ -591,7 +591,7 @@ glm_vec3_mulsubs(vec3 a, float s, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_maxsub(vec3 a, vec3 b, vec3 dest) {
+glm_vec3_maxsub(const vec3 a, const vec3 b, vec3 dest) {
   dest[0] -= glm_max(a[0], b[0]);
   dest[1] -= glm_max(a[1], b[1]);
   dest[2] -= glm_max(a[2], b[2]);
@@ -608,7 +608,7 @@ glm_vec3_maxsub(vec3 a, vec3 b, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_minsub(vec3 a, vec3 b, vec3 dest) {
+glm_vec3_minsub(const vec3 a, const vec3 b, vec3 dest) {
   dest[0] -= glm_min(a[0], b[0]);
   dest[1] -= glm_min(a[1], b[1]);
   dest[2] -= glm_min(a[2], b[2]);
@@ -746,7 +746,7 @@ glm_vec3_angle(const vec3 a, const vec3 b) {
  */
 CGLM_INLINE
 void
-glm_vec3_rotate(vec3 v, float angle, vec3 axis) {
+glm_vec3_rotate(vec3 v, float angle, const vec3 axis) {
   vec3   v1, v2, k;
   float  c, s;
 
@@ -1217,7 +1217,7 @@ glm_vec3_make(const float * __restrict src, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_faceforward(vec3 n, vec3 v, vec3 nref, vec3 dest) {
+glm_vec3_faceforward(const vec3 n, const vec3 v, const vec3 nref, vec3 dest) {
   if (glm_vec3_dot(v, nref) < 0.0f) {
     /* N is facing away from I */
     glm_vec3_copy(n, dest);
@@ -1236,7 +1236,7 @@ glm_vec3_faceforward(vec3 n, vec3 v, vec3 nref, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_vec3_reflect(vec3 v, vec3 n, vec3 dest) {
+glm_vec3_reflect(const vec3 v, const vec3 n, vec3 dest) {
   vec3 temp;
   glm_vec3_scale(n, 2.0f * glm_vec3_dot(v, n), temp);
   glm_vec3_sub(v, temp, dest);
@@ -1258,7 +1258,7 @@ glm_vec3_reflect(vec3 v, vec3 n, vec3 dest) {
  */
 CGLM_INLINE
 bool
-glm_vec3_refract(vec3 v, vec3 n, float eta, vec3 dest) {
+glm_vec3_refract(const vec3 v, const vec3 n, float eta, vec3 dest) {
   float ndi, eni, k;
 
   ndi = glm_vec3_dot(n, v);

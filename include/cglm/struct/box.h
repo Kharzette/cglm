@@ -27,7 +27,7 @@
  */
 CGLM_INLINE
 void
-glms_aabb_(transform)(vec3s box[2], mat4s m, vec3s dest[2]) {
+glms_aabb_(transform)(const vec3s box[2], const mat4s m, vec3s dest[2]) {
   vec3 rawBox[2];
   vec3 rawDest[2];
 
@@ -48,7 +48,7 @@ glms_aabb_(transform)(vec3s box[2], mat4s m, vec3s dest[2]) {
  */
 CGLM_INLINE
 void
-glms_aabb_(merge)(vec3s box1[2], vec3s box2[2], vec3s dest[2]) {
+glms_aabb_(merge)(const vec3s box1[2], const vec3s box2[2], vec3s dest[2]) {
   vec3 rawBox1[2];
   vec3 rawBox2[2];
   vec3 rawDest[2];
@@ -72,7 +72,7 @@ glms_aabb_(merge)(vec3s box1[2], vec3s box2[2], vec3s dest[2]) {
  */
 CGLM_INLINE
 void
-glms_aabb_(crop)(vec3s box[2], vec3s cropBox[2], vec3s dest[2]) {
+glms_aabb_(crop)(const vec3s box[2], const vec3s cropBox[2], vec3s dest[2]) {
   vec3 rawBox[2];
   vec3 rawCropBox[2];
   vec3 rawDest[2];
@@ -97,9 +97,9 @@ glms_aabb_(crop)(vec3s box[2], vec3s cropBox[2], vec3s dest[2]) {
  */
 CGLM_INLINE
 void
-glms_aabb_(crop_until)(vec3s box[2],
-                       vec3s cropBox[2],
-                       vec3s clampBox[2],
+glms_aabb_(crop_until)(const vec3s box[2],
+                       const vec3s cropBox[2],
+                       const vec3s clampBox[2],
                        vec3s dest[2]) {
   glms_aabb_(crop)(box, cropBox, dest);
   glms_aabb_(merge)(clampBox, dest, dest);
@@ -121,7 +121,7 @@ glms_aabb_(crop_until)(vec3s box[2],
  */
 CGLM_INLINE
 bool
-glms_aabb_(frustum)(vec3s box[2], vec4s planes[6]) {
+glms_aabb_(frustum)(const vec3s box[2], vec4s planes[6]) {
   vec3 rawBox[2];
   vec4 rawPlanes[6];
 
@@ -149,7 +149,7 @@ glms_aabb_(invalidate)(vec3s box[2]) {
  */
 CGLM_INLINE
 bool
-glms_aabb_(isvalid)(vec3s box[2]) {
+glms_aabb_(isvalid)(const vec3s box[2]) {
   vec3 rawBox[2];
   glms_vec3_(unpack)(rawBox, box, 2);
   return glm_aabb_isvalid(rawBox);
@@ -162,7 +162,7 @@ glms_aabb_(isvalid)(vec3s box[2]) {
  */
 CGLM_INLINE
 float
-glms_aabb_(size)(vec3s box[2]) {
+glms_aabb_(size)(const vec3s box[2]) {
   return glm_vec3_distance(box[0].raw, box[1].raw);
 }
 
@@ -173,7 +173,7 @@ glms_aabb_(size)(vec3s box[2]) {
  */
 CGLM_INLINE
 float
-glms_aabb_(radius)(vec3s box[2]) {
+glms_aabb_(radius)(const vec3s box[2]) {
   return glms_aabb_(size)(box) * 0.5f;
 }
 
@@ -185,7 +185,7 @@ glms_aabb_(radius)(vec3s box[2]) {
  */
 CGLM_INLINE
 vec3s
-glms_aabb_(center)(vec3s box[2]) {
+glms_aabb_(center)(const vec3s box[2]) {
   return glms_vec3_(center)(box[0], box[1]);
 }
 
@@ -197,7 +197,7 @@ glms_aabb_(center)(vec3s box[2]) {
  */
 CGLM_INLINE
 bool
-glms_aabb_(aabb)(vec3s box[2], vec3s other[2]) {
+glms_aabb_(aabb)(const vec3s box[2], const vec3s other[2]) {
   vec3 rawBox[2];
   vec3 rawOther[2];
 
@@ -217,7 +217,7 @@ glms_aabb_(aabb)(vec3s box[2], vec3s other[2]) {
  */
 CGLM_INLINE
 bool
-glms_aabb_(sphere)(vec3s box[2], vec4s s) {
+glms_aabb_(sphere)(const vec3s box[2], const vec4s s) {
   vec3 rawBox[2];
 
   glms_vec3_(unpack)(rawBox, box, 2);
@@ -232,7 +232,7 @@ glms_aabb_(sphere)(vec3s box[2], vec4s s) {
  */
 CGLM_INLINE
 bool
-glms_aabb_(point)(vec3s box[2], vec3s point) {
+glms_aabb_(point)(const vec3s box[2], const vec3s point) {
   vec3 rawBox[2];
 
   glms_vec3_(unpack)(rawBox, box, 2);
@@ -247,7 +247,7 @@ glms_aabb_(point)(vec3s box[2], vec3s point) {
  */
 CGLM_INLINE
 bool
-glms_aabb_(contains)(vec3s box[2], vec3s other[2]) {
+glms_aabb_(contains)(const vec3s box[2], const vec3s other[2]) {
   vec3 rawBox[2];
   vec3 rawOther[2];
 

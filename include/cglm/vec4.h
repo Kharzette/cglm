@@ -711,7 +711,7 @@ glm_vec4_minadd(const vec4 a, const vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_subsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_subsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(
           glmm_load(dest),
@@ -743,7 +743,7 @@ glm_vec4_subsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_addsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_addsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(
           glmm_load(dest),
@@ -775,7 +775,7 @@ glm_vec4_addsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_mulsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_mulsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(CGLM_SIMD)
   glmm_store(dest, glmm_fnmadd(glmm_load(a), glmm_load(b), glmm_load(dest)));
 #else
@@ -797,7 +797,7 @@ glm_vec4_mulsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_mulsubs(vec4 a, float s, vec4 dest) {
+glm_vec4_mulsubs(const vec4 a, float s, vec4 dest) {
 #if defined(CGLM_SIMD)
   glmm_store(dest, glmm_fnmadd(glmm_load(a), glmm_set1(s), glmm_load(dest)));
 #else
@@ -819,7 +819,7 @@ glm_vec4_mulsubs(vec4 a, float s, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_maxsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_maxsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(glmm_load(dest),
                                   glmm_max(glmm_load(a), glmm_load(b))));
@@ -848,7 +848,7 @@ glm_vec4_maxsub(vec4 a, vec4 b, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_minsub(vec4 a, vec4 b, vec4 dest) {
+glm_vec4_minsub(const vec4 a, const vec4 b, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest, wasm_f32x4_sub(glmm_load(dest),
                                   glmm_min(glmm_load(a), glmm_load(b))));
@@ -1315,7 +1315,7 @@ glm_vec4_make(const float * __restrict src, vec4 dest) {
  */
 CGLM_INLINE
 void
-glm_vec4_reflect(vec4 v, vec4 n, vec4 dest) {
+glm_vec4_reflect(const vec4 v, const vec4 n, vec4 dest) {
   vec4 temp;
 
   /* TODO: direct simd touch */
@@ -1345,7 +1345,7 @@ glm_vec4_reflect(vec4 v, vec4 n, vec4 dest) {
  */
 CGLM_INLINE
 bool
-glm_vec4_refract(vec4 v, vec4 n, float eta, vec4 dest) {
+glm_vec4_refract(const vec4 v, const vec4 n, float eta, vec4 dest) {
   float ndi, eni, k;
 
   ndi = glm_vec4_dot(n, v);

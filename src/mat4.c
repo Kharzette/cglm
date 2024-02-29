@@ -124,7 +124,7 @@ glmc_mat4_scale(mat4 m, float s) {
 
 CGLM_EXPORT
 float
-glmc_mat4_det(mat4 mat) {
+glmc_mat4_det(const mat4 mat) {
   return glm_mat4_det(mat);
 }
 
