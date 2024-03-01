@@ -679,7 +679,7 @@ glms_vec3_(angle)(const vec3s a, const vec3s b) {
  */
 CGLM_INLINE
 vec3s
-glms_vec3_(rotate)(const vec3s v, float angle, const vec3s axis) {
+glms_vec3_(rotate)(vec3s v, float angle, const vec3s axis) {
   glm_vec3_rotate(v.raw, angle, axis.raw);
   return v;
 }

@@ -275,7 +275,7 @@ CGLM_INLINE
 void
 glm_vec2_scale_as(const vec2 v, float s, vec2 dest)
 {
-  float norm  =glm_vec2_norm2(v);
+  float norm  =glm_vec2_norm(v);
 
   if (norm == 0.0f) {
     glm_vec2_zero(dest);

@@ -17,7 +17,7 @@ TEST_IMPL(GLM_PREFIX, unprojecti) {
   glm_lookat((vec3){0.0f, 0.0f, 0.0f}, pos, GLM_YUP, view);
 
   glm_perspective_default(0.5f, proj);
-  glm_mat4_mulN((mat4 *[]){&proj, &view, &model}, 3, mvp);
+  glm_mat4_mulN((const mat4 *[]){&proj, &view, &model}, 3, mvp);
 
   GLM(project)(pos, mvp, viewport, projected);
 
@@ -43,7 +43,7 @@ TEST_IMPL(GLM_PREFIX, unproject) {
   glm_lookat((vec3){0.0f, 0.0f, 0.0f}, pos, GLM_YUP, view);
 
   glm_perspective_default(0.5f, proj);
-  glm_mat4_mulN((mat4 *[]){&proj, &view, &model}, 3, mvp);
+  glm_mat4_mulN((const mat4 *[]){&proj, &view, &model}, 3, mvp);
 
   GLM(project)(pos, mvp, viewport, projected);
   GLM(unproject)(projected, mvp, viewport, unprojected);
@@ -67,7 +67,7 @@ TEST_IMPL(GLM_PREFIX, project) {
   glm_lookat((vec3){0.0f, 0.0f, 0.0f}, pos, GLM_YUP, view);
 
   glm_perspective_default(0.5f, proj);
-  glm_mat4_mulN((mat4 *[]){&proj, &view, &model}, 3, mvp);
+  glm_mat4_mulN((const mat4 *[]){&proj, &view, &model}, 3, mvp);
 
   GLM(project)(pos, mvp, viewport, projected);
   GLM(unproject)(projected, mvp, viewport, unprojected);
