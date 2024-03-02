@@ -26,15 +26,15 @@ glmc_aabb2d_copy(const vec2 aabb[2], vec2 dest[2]);
 
 CGLM_EXPORT
 void
-glmc_aabb2d_transform(const vec2 aabb[2], mat3 m, vec2 dest[2]);
+glmc_aabb2d_transform(const vec2 aabb[2], const mat3 m, vec2 dest[2]);
 
 CGLM_EXPORT
 void
-glmc_aabb2d_merge(const vec2 aabb1[2], vec2 aabb2[2], vec2 dest[2]);
+glmc_aabb2d_merge(const vec2 aabb1[2], const vec2 aabb2[2], vec2 dest[2]);
 
 CGLM_EXPORT
 void
-glmc_aabb2d_crop(const vec2 aabb[2], vec2 cropAabb[2], vec2 dest[2]);
+glmc_aabb2d_crop(const vec2 aabb[2], const vec2 cropAabb[2], vec2 dest[2]);
 
 CGLM_EXPORT
 void
