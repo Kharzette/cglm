@@ -166,37 +166,37 @@ glmc_vec2_minadd(const vec2 a, const vec2 b, vec2 dest) {
 
 CGLM_EXPORT
 void
-glmc_vec2_subsub(vec2 a, vec2 b, vec2 dest) {
+glmc_vec2_subsub(const vec2 a, const vec2 b, vec2 dest) {
   glm_vec2_subsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec2_addsub(vec2 a, vec2 b, vec2 dest) {
+glmc_vec2_addsub(const vec2 a, const vec2 b, vec2 dest) {
   glm_vec2_addsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec2_mulsub(vec2 a, vec2 b, vec2 dest) {
+glmc_vec2_mulsub(const vec2 a, const vec2 b, vec2 dest) {
   glm_vec2_mulsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec2_mulsubs(vec2 a, float s, vec2 dest) {
+glmc_vec2_mulsubs(const vec2 a, float s, vec2 dest) {
   glm_vec2_mulsubs(a, s, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec2_maxsub(vec2 a, vec2 b, vec2 dest) {
+glmc_vec2_maxsub(const vec2 a, const vec2 b, vec2 dest) {
   glm_vec2_maxsub(a, b, dest);
 }
 
 CGLM_EXPORT
 void
-glmc_vec2_minsub(vec2 a, vec2 b, vec2 dest) {
+glmc_vec2_minsub(const vec2 a, const vec2 b, vec2 dest) {
   glm_vec2_minsub(a, b, dest);
 }
 
