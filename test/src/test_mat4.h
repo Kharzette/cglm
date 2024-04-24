@@ -162,7 +162,7 @@ TEST_IMPL(GLM_PREFIX, mat4_mulN) {
   mat4 m2 = A_MATRIX;
   mat4 m3 = A_MATRIX;
 
-  mat4 *matrices[] = {
+  const mat4 * __restrict matrices[] = {
     &m1, &m2, &m3
   };
 

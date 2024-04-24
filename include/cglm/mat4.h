@@ -105,7 +105,7 @@
  */
 CGLM_INLINE
 void
-glm_mat4_ucopy(mat4 mat, mat4 dest) {
+glm_mat4_ucopy(const mat4 mat, mat4 dest) {
   dest[0][0] = mat[0][0];  dest[1][0] = mat[1][0];
   dest[0][1] = mat[0][1];  dest[1][1] = mat[1][1];
   dest[0][2] = mat[0][2];  dest[1][2] = mat[1][2];
@@ -125,7 +125,7 @@ glm_mat4_ucopy(mat4 mat, mat4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_copy(mat4 mat, mat4 dest) {
+glm_mat4_copy(const mat4 mat, mat4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glmm_store(dest[0], glmm_load(mat[0]));
   glmm_store(dest[1], glmm_load(mat[1]));
@@ -237,7 +237,7 @@ glm_mat4_zero(mat4 mat) {
  */
 CGLM_INLINE
 void
-glm_mat4_pick3(mat4 mat, mat3 dest) {
+glm_mat4_pick3(const mat4 mat, mat3 dest) {
   dest[0][0] = mat[0][0];
   dest[0][1] = mat[0][1];
   dest[0][2] = mat[0][2];
@@ -261,7 +261,7 @@ glm_mat4_pick3(mat4 mat, mat3 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_pick3t(mat4 mat, mat3 dest) {
+glm_mat4_pick3t(const mat4 mat, mat3 dest) {
   dest[0][0] = mat[0][0];
   dest[0][1] = mat[1][0];
   dest[0][2] = mat[2][0];
@@ -283,7 +283,7 @@ glm_mat4_pick3t(mat4 mat, mat3 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_ins3(mat3 mat, mat4 dest) {
+glm_mat4_ins3(const mat3 mat, mat4 dest) {
   dest[0][0] = mat[0][0];
   dest[0][1] = mat[0][1];
   dest[0][2] = mat[0][2];
@@ -313,7 +313,7 @@ glm_mat4_ins3(mat3 mat, mat4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_mul(mat4 m1, mat4 m2, mat4 dest) {
+glm_mat4_mul(const mat4 m1, const mat4 m2, mat4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glm_mat4_mul_wasm(m1, m2, dest);
 #elif defined(__AVX__)
@@ -373,7 +373,7 @@ glm_mat4_mul(mat4 m1, mat4 m2, mat4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_mulN(mat4 * __restrict matrices[], uint32_t len, mat4 dest) {
+glm_mat4_mulN(const mat4 * __restrict matrices[], uint32_t len, mat4 dest) {
   uint32_t i;
 
 #ifndef NDEBUG
@@ -395,7 +395,7 @@ glm_mat4_mulN(mat4 * __restrict matrices[], uint32_t len, mat4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_mulv(mat4 m, vec4 v, vec4 dest) {
+glm_mat4_mulv(const mat4 m, const vec4 v, vec4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glm_mat4_mulv_wasm(m, v, dest);
 #elif defined( __SSE__ ) || defined( __SSE2__ )
@@ -421,7 +421,7 @@ glm_mat4_mulv(mat4 m, vec4 v, vec4 dest) {
  */
 CGLM_INLINE
 float
-glm_mat4_trace(mat4 m) {
+glm_mat4_trace(const mat4 m) {
   return m[0][0] + m[1][1] + m[2][2] + m[3][3];
 }
 
@@ -434,7 +434,7 @@ glm_mat4_trace(mat4 m) {
  */
 CGLM_INLINE
 float
-glm_mat4_trace3(mat4 m) {
+glm_mat4_trace3(const mat4 m) {
   return m[0][0] + m[1][1] + m[2][2];
 }
 
@@ -446,7 +446,7 @@ glm_mat4_trace3(mat4 m) {
  */
 CGLM_INLINE
 void
-glm_mat4_quat(mat4 m, versor dest) {
+glm_mat4_quat(const mat4 m, versor dest) {
   float trace, r, rinv;
 
   /* it seems using like m12 instead of m[1][2] causes extra instructions */
@@ -500,7 +500,7 @@ glm_mat4_quat(mat4 m, versor dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_mulv3(mat4 m, vec3 v, float last, vec3 dest) {
+glm_mat4_mulv3(const mat4 m, const vec3 v, float last, vec3 dest) {
   vec4 res;
   glm_vec4(v, last, res);
   glm_mat4_mulv(m, res, res);
@@ -517,7 +517,7 @@ glm_mat4_mulv3(mat4 m, vec3 v, float last, vec3 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_transpose_to(mat4 m, mat4 dest) {
+glm_mat4_transpose_to(const mat4 m, mat4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glm_mat4_transp_wasm(m, dest);
 #elif defined( __SSE__ ) || defined( __SSE2__ )
@@ -644,7 +644,7 @@ glm_mat4_det(mat4 mat) {
  */
 CGLM_INLINE
 void
-glm_mat4_inv(mat4 mat, mat4 dest) {
+glm_mat4_inv(const mat4 mat, mat4 dest) {
 #if defined( __SSE__ ) || defined( __SSE2__ )
   glm_mat4_inv_sse2(mat, dest);
 #elif defined(CGLM_NEON_FP)
@@ -707,7 +707,7 @@ glm_mat4_inv(mat4 mat, mat4 dest) {
  */
 CGLM_INLINE
 void
-glm_mat4_inv_fast(mat4 mat, mat4 dest) {
+glm_mat4_inv_fast(const mat4 mat, mat4 dest) {
 #if defined(__wasm__) && defined(__wasm_simd128__)
   glm_mat4_inv_fast_wasm(mat, dest);
 #elif defined( __SSE__ ) || defined( __SSE2__ )
@@ -776,7 +776,7 @@ glm_mat4_swap_row(mat4 mat, int row1, int row2) {
  */
 CGLM_INLINE
 float
-glm_mat4_rmc(vec4 r, mat4 m, vec4 c) {
+glm_mat4_rmc(const vec4 r, const mat4 m, const vec4 c) {
   vec4 tmp;
   glm_mat4_mulv(m, c, tmp);
   return glm_vec4_dot(r, tmp);
